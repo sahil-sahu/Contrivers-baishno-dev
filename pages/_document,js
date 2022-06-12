@@ -11,9 +11,9 @@ class MyDocument extends Document {
       <Html>
         <Head>
             <link rel="icon" href="/favicon.png" type="image/x-icon" />  
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-            <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&family=Jost:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" /> 
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=PT+Sans+Narrow:wght@400;700&family=Playfair+Display:wght@500;600;700;800&family=Titillium+Web:wght@600;700;900&display=swap" rel="stylesheet">   
         </Head>
         <body>
           <Main />

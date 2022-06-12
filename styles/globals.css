@@ -14,3 +14,37 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.swiper-pagination{
+  /* font-family: 'Titillium Web', sans-serif !important; */
+  font-weight: 700;
+  font-size: 3rem;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+  align-items: flex-end;
+  padding: 1rem;
+  /* width: 25% !important; */
+  /* transform: translate(100%,0) !important; */
+}
+.swiper-pagination-current{
+
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #EFA37F;
+  font-size: 6rem;
+  line-height: 5rem;
+
+}
+
+.swiper-button-prev, .swiper-button-next{
+  color: #EFA37F !important;
+  border-radius: 100%;
+  scale: .5;
+  padding: 4rem !important;
+  width: 4rem !important;
+  height: 4rem !important;
+  font-size: 1rem;
+  border: 5px solid #EFA37F;
+}
