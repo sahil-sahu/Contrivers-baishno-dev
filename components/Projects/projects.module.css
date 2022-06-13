@@ -1,0 +1,36 @@
+.card{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+
+}
+
+.card img{
+
+    object-fit: cover;
+    object-position: top;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+
+}
+
+.content{
+
+    /* background-color: #0B0D31; */
+    box-shadow: 5px 10px 1.25rem #ffffffAA, inset -5px -5px .8rem #ffffffAA;
+    border-radius: 10px;
+    margin: 1.5rem;
+    padding: 1rem 1.5rem;
+    font-family: 'PT Sans Narrow', sans-serif;
+    letter-spacing: -.3pt;
+
+}
+
+.date{
+
+    text-align: right;
+    color: #F19F39;
+
+}

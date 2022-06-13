@@ -1,11 +1,16 @@
 import { NextSeo } from 'next-seo';
-import Image from 'next/image'
-import Link from 'next/link'
-import Head from 'next/head'
+import Image from 'next/image';
+import Link from 'next/link';
+import Head from 'next/head';
+
 import styles from '../components/index.module.css';
 import Header from '../components/header';
 import webhault from '../components/webhault.module.css';
 import About from "../components/about";
+import Projects from '../components/Projects/projects';
+import People from '../components/people/people';
+
+
 import React, { useRef, useState, useEffect } from "react";
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
@@ -144,6 +149,13 @@ export default function Home() {
           </div>
         </section>
         <About />
+        <section className={styles.Projects}>
+          <div className={styles.projectsContainer}>
+            <h2>Aesthetics</h2>
+            <Projects />
+          </div>
+        </section>
+        <People />
       </main>  
     </>
   )

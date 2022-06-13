@@ -1,0 +1,84 @@
+.People{
+
+    width: 100%;
+    height: auto;
+    /* bac */
+    /* height: 80vh; */
+    
+}
+
+.peopleContainer{
+
+    margin: auto;
+    max-width: 80rem;
+    padding: 1rem;
+    color: #00055A;
+
+}
+
+.peopleContainer h2{
+
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.People::before{
+
+    content: "03";
+    font-family: 'Playfair Display', serif;
+    font-size: 16rem;
+    font-weight: 500;
+    letter-spacing: 0rem;
+    transform: scaleX(1.3);
+    padding-left: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    line-height: 15rem;
+    height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    /* bottom: 0%; */
+    /* top: 100%; */
+    z-index: -1;
+    color: rgba(0,0,0,.05);
+
+}
+
+.Card{
+
+    padding: 2rem;
+    min-height: 70vh;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin: 1rem;
+    letter-spacing: -1px;
+    color: #00000090;
+    background-image: url("/assets/testiFrame.svg");
+    background: url("/assets/testiFrame.svg");
+    background-position: center -10vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+
+.Card p{
+    transform: translateY(100%);
+}
+
+.profileIcon{
+
+    transform: translate(90%, 180%);
+    border-radius: 100%;
+
+}
+
+.profileIcon img{
+
+    border-radius: 100%;
+
+}
