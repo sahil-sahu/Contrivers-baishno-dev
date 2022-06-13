@@ -4,11 +4,13 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 * {
@@ -18,7 +20,7 @@ a {
 .swiper-pagination{
   /* font-family: 'Titillium Web', sans-serif !important; */
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #fff;
   display: flex;
   justify-content: flex-end;
@@ -33,18 +35,79 @@ a {
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #EFA37F;
-  font-size: 6rem;
-  line-height: 5rem;
+  font-size: 4rem;
+  line-height: 4rem;
 
 }
 
 .swiper-button-prev, .swiper-button-next{
   color: #EFA37F !important;
   border-radius: 100%;
-  scale: .5;
-  padding: 4rem !important;
+  /* padding: 4rem !important; */
   width: 4rem !important;
   height: 4rem !important;
-  font-size: 1rem;
-  border: 5px solid #EFA37F;
+  border: 2px solid #EFA37F;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after{
+
+  font-size: 1.5rem !important;
+  font-weight: 700;
+
+}
+
+@media only screen and (max-width: 800px){
+
+  .swiper-button-prev, .swiper-button-next{
+
+    top: 95% !important;
+    left:15% !important;
+    transform: translate(-50%,-50%);
+
+  }
+
+  .swiper-button-next{
+
+    left:25% !important;
+
+  }
+
+  .swiper-pagination{
+    font-weight: 700;
+    font-size: 1.5rem;
+    gap: .2rem;
+  }
+  .swiper-pagination-current{
+  
+    font-size: 3rem;
+    line-height: 3rem;
+    -webkit-text-stroke-width: 2px;
+  
+  }
+
+}
+
+@media only screen and (max-width: 600px){
+
+  .swiper-button-prev, .swiper-button-next{
+    width: 3rem !important;
+    height: 3rem !important;
+    border: 2px solid #EFA37F;
+  }
+
+  .swiper-button-prev::after, .swiper-button-next::after{
+
+    font-size: 1rem !important;
+    font-weight: 700;
+  
+  }
+
+  .swiper-button-next{
+
+    left:35% !important;
+
+  }
+
+  
+
 }

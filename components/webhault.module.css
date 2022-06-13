@@ -1,0 +1,31 @@
+.webhault{
+    
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('/assets/webhault.svg');
+    background-size: cover;
+    background-position: right;
+
+}
+
+.webHaultContainer{
+
+    max-width: 50rem;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #fff;
+
+}
+
+.webHaultContainer span{
+
+    color: #F19F39;
+
+}

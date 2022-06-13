@@ -3,9 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import styles from '../components/index.module.css';
+import Header from '../components/header';
+import webhault from '../components/webhault.module.css';
+import About from "../components/about";
 import React, { useRef, useState, useEffect } from "react";
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
+import { Instagram, Facebook, Linkedin, Twitter } from 'react-bootstrap-icons';
 
 const HeroSliderConfigs = {
   containerClass: `${['swiper-container', styles.heroSlide]}`,
@@ -49,8 +53,9 @@ export default function Home() {
         description="Real Estates Company adomed with strong fundamentals on providing real quality homes to people that conform to their taste and style for an affordable price in and a rounding Bhubaneswar since last 11 years. "
       />
       <main>
-        <div className="hero">
-          <div className="heroConatiner">
+        <section className="hero">
+          <div className={styles.heroConatiner}>
+            <Header />
             <Swiper {...HeroSliderConfigs} getSwiper={setParallaxSwiper}>
               <div className={styles.heroSlide}>
                 <div
@@ -123,8 +128,22 @@ export default function Home() {
                 </div>
               </div>
             </Swiper>
+            <div className={styles.Social}>
+              <ul>
+                <li><Instagram /></li>
+                <li><Facebook /></li>
+                <li><Twitter /></li>
+                <li><Linkedin /></li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </section>
+        <section className={webhault.webhault}>
+          <div className={webhault.webHaultContainer}>
+            Make Your <span>Dreams</span> come true
+          </div>
+        </section>
+        <About />
       </main>  
     </>
   )
