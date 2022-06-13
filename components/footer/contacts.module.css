@@ -1,7 +1,8 @@
 .contacts{
 
     width: 100%;
-    min-height: 70vh;
+    height: 80vh;
+    /* min-height: 70vh; */
     display: flex;
     align-items: center;
 
@@ -32,7 +33,7 @@
 .contactsContainer{
 
     max-width: 80rem;
-    margin: auto;
+    margin: 2rem auto;
     display: flex;
 
 }
