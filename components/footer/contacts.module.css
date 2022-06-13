@@ -1,0 +1,117 @@
+.contacts{
+
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.contacts::before{
+
+    content: "05";
+    font-family: 'Playfair Display', serif;
+    font-size: 16rem;
+    font-weight: 500;
+    letter-spacing: 0rem;
+    transform: scaleX(1.3);
+    padding-left: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    line-height: 15rem;
+    height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    /* bottom: 0%; */
+    /* top: 100%; */
+    z-index: -1;
+    color: rgba(0,0,0,.2);
+
+}
+
+.contactsContainer{
+
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+
+}
+
+.contactsText{
+
+    flex: 3;
+    padding: 1rem;
+
+}
+
+.contactsText h2{
+
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #00055A;
+
+}
+
+.contactsText p{
+
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: #808080;
+    
+}
+
+.Services{
+    
+    flex: 2;
+    color: #808080;
+    list-style: none;
+    font-family: 'Iceberg', cursive;
+    font-size: 1.55rem;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.icon{
+
+    flex: 1;
+    /* font-size: 1.5rem; */
+
+}
+
+.Services li{
+    display: flex;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.Services li span{
+    flex: 6 ;
+    font-size: 1.2rem;
+}
+
+.gmap{
+
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: #00055A solid 2px;
+
+}
+
+@media only screen and (max-width: 600px){
+
+    .contactsContainer{
+
+        flex-direction: column-reverse;
+        padding: 1rem;
+    
+    }
+
+}

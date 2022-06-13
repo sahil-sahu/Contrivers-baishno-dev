@@ -1,0 +1,103 @@
+.footer{
+
+    background-color: #0B0D31;
+
+}
+
+.footerContainer{
+
+    max-width: 70rem;    
+    margin: auto;
+    color: #fff;
+    padding: 2rem;
+    padding-bottom: .5rem;
+
+}
+
+.company{
+
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+
+}
+
+.company span{
+
+    color: #EFA37F;
+    padding: 10px;
+
+}
+
+.socialWrap{
+
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto;
+    /* background-color: #EFA37F; */
+
+}
+
+.rating{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.credits{
+
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'PT Sans Narrow', sans-serif;
+
+}
+
+.credits a,.credits span{
+    
+    color: #F19F39;
+
+}
+
+.Social ul{
+
+    list-style: none;
+    color: #EFA37F;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.Social ul li{
+
+    border-radius: 100%;
+    border: #EFA37F 2px solid;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+}
+
+@media only screen and (max-width: 600px){
+
+    .company{
+
+        font-size: 2rem;
+
+    }
+
+    .company span{
+
+        display: block;
+
+    }
+
+    .socialWrap{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

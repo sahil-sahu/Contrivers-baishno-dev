@@ -1,4 +1,5 @@
 import styles from "./index.module.css";
+import Link from 'next/link';
 import { Navbar, Container, Nav, NavDropdown  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -20,11 +21,11 @@ export default function Header(){
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" className={styles.navWrapper}>
                       <Nav className={`ms-auto ${styles.navItem}`}>
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Projects</Nav.Link>
-                        <Nav.Link href="#link">About</Nav.Link>
-                        <Nav.Link href="#link">Blog</Nav.Link>
-                        <Nav.Link href="#link">Contact</Nav.Link>
+                        <Nav.Link><Link href={`/`} >Home</Link></Nav.Link>
+                        <Nav.Link><Link href={`/projects`} >Projects</Link></Nav.Link>
+                        <Nav.Link><Link href={`/about`} >About</Link></Nav.Link>
+                        <Nav.Link><Link href={`/blog`} >Blog</Link></Nav.Link>
+                        <Nav.Link><Link href={`/contacts`} >Contact</Link></Nav.Link>
                       </Nav>
                     </Navbar.Collapse>
                   </Container>

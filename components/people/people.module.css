@@ -50,35 +50,53 @@
 
 .Card{
 
-    padding: 2rem;
-    min-height: 70vh;
+    
+    /* min-height: 70vh; */
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 1.15rem;
     font-weight: 500;
+    height: auto;
     margin: 1rem;
     letter-spacing: -1px;
     color: #00000090;
-    background-image: url("/assets/testiFrame.svg");
-    background: url("/assets/testiFrame.svg");
-    background-position: center -10vh;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    /* background-image: url("/assets/testiFrame.svg"); */
+   
 
 }
 
 .Card p{
-    transform: translateY(100%);
+
+    padding: 25% 2rem;
+    background: url("/assets/testiFrame.svg");
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .profileIcon{
 
-    transform: translate(90%, 180%);
-    border-radius: 100%;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 
 }
 
 .profileIcon img{
 
     border-radius: 100%;
+
+}
+
+@media only screen and (max-width: 600px){
+
+    .Card p{
+
+        padding: 30% 1.5rem;
+        background: url("/assets/testiFrames.svg");
+        background-size: 100% auto;
+        background-position: center;
+
+    }
+
 
 }

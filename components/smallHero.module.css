@@ -1,0 +1,16 @@
+.hero{
+
+    height: 75vh;
+    overflow: hidden;
+    margin: none;
+
+}
+
+.heroImage{
+
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(.6);
+
+
+}

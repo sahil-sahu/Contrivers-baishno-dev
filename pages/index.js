@@ -9,6 +9,8 @@ import webhault from '../components/webhault.module.css';
 import About from "../components/about";
 import Projects from '../components/Projects/projects';
 import People from '../components/people/people';
+import Contacts from '../components/footer/contacts';
+import Footer from '../components/footer/footer';
 
 
 import React, { useRef, useState, useEffect } from "react";
@@ -156,6 +158,8 @@ export default function Home() {
           </div>
         </section>
         <People />
+        <Contacts />
+        <Footer />
       </main>  
     </>
   )

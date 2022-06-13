@@ -1,0 +1,39 @@
+.message{
+
+    width: 100%;
+    margin: auto;
+    padding: 1rem 25%;
+    background: linear-gradient(#0B0D31 60%, #00055A);
+
+}
+
+.inputBox{
+
+    margin: 1rem;
+
+}
+
+.sumbit{
+
+    background-color: #0B0D31;
+    border: #fff solid 1px;
+    border-radius: 0px;
+    font-family: 'Iceberg', cursive;
+    font-size: 1.3rem;
+    padding: 1rem;
+    margin: 2rem 1rem;
+
+}
+
+@media only screen and (max-width: 600px){
+
+    .message{
+
+        width: 100%;
+        margin: auto;
+        padding: 1rem 5%;
+        background: linear-gradient(#0B0D31 60%, #00055A);
+    
+    }
+
+}
