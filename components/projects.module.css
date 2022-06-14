@@ -1,0 +1,44 @@
+.completed{
+
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background: url('/assets/design.svg');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 90% 95%;
+    z-index:2;
+
+}
+
+.Projects{
+
+    background-color: #0B0D31;
+
+}
+
+.Projects::before{
+
+    content: "";
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-image: url("/assets/Rings.svg");
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 30%;
+
+}
+
+@media only screen and (max-width: 600px){
+
+    .Projects::before{
+        background-size: 80%;
+    }
+
+    .completed{
+        background-size: 80%;
+    }
+
+}

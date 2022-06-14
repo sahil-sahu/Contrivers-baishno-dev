@@ -1,0 +1,13 @@
+.null{
+
+    max-width: 70rem;
+    width: 90%;
+    margin: auto;
+    height: 15vh;
+    min-height: 10rem;
+    background-image: url("/assets/cross.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 95%;
+
+}
