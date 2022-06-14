@@ -75,7 +75,7 @@ export default function Home() {
                     <h1>
                       Classic & Modern
                       <span>
-                        architecture at it's best
+                        architecture at it&apos;s best
                       </span>
                     </h1>
                     
@@ -98,7 +98,7 @@ export default function Home() {
                     <h1>
                       Classic & Modern
                       <span>
-                        architecture at it's best
+                        architecture at it&apos;s best
                       </span>
                     </h1>
                     
@@ -122,7 +122,7 @@ export default function Home() {
                       Classic & Modern
                     </h1>
                     <span>
-                      architecture at it's best
+                      architecture at it&apos;s best
                     </span>
                     <div className={styles.DiscoverContainer}>
                       <Link href={`#`}>
