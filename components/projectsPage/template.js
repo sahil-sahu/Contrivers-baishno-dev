@@ -47,7 +47,7 @@ export default function Template(props){
         setHeight(window.innerHeight*.5);
         setWidth(window.innerWidth*.4);
 
-        if(width < 801){
+        if(window.innerWidth < 801){
             setHeight(window.innerHeight*.5);
             setWidth(window.innerWidth*.9);
         }

@@ -1,0 +1,145 @@
+.completed{
+
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background: url('/assets/design2.svg');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 100% 50%;
+    z-index:2;
+
+}
+
+
+
+.Projects{
+
+    background-color: #0B0D31;
+
+}
+
+.Projects::before{
+
+    content: "";
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-image: url("/assets/Rings.svg");
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 30%;
+
+}
+
+.CardSlider{
+
+    width: 50vw;
+    height: 60vh;
+    flex: 2;
+
+}
+
+.CardSlider img{
+
+    object-position: center;
+    object-fit: cover;
+    filter: brightness(.6);
+    
+}
+
+.description{
+
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    margin-right: 0;
+    transform: translateX(10%);
+    width: 60%;
+    margin-top: 10%;
+
+}
+
+
+.heading{
+
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 1rem auto;
+    border-bottom: #fff solid 1px;
+    min-width: 30%;
+
+}
+
+.content{
+
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+.button{
+
+    position: absolute;
+    transform: translate(30%,0%);
+
+}
+
+.smallWrapper{
+
+    margin-top: 0;
+
+}
+
+@media only screen and (max-width: 800px){
+
+    .CardSlider{
+
+        width: 95%;
+        height: 50vh;
+        flex: 3;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    
+    }
+
+    .completed > div{
+
+        flex-direction: column;
+
+    }
+
+    .description{
+
+        padding: 1rem;
+        text-align: center;
+        color: #fff;
+        margin: auto;
+        margin-right: unset;
+        transform: translateX(0%);
+        width: 90%;
+        margin-top: 0%;
+    
+    }
+
+    .button{
+
+        position: relative;
+        /* margin: auto; */
+        transform: translate(15%,0%);
+    
+    }
+
+    .completed{
+
+        background-size: 125%;
+        background-position: 100% 66%;
+    
+    }
+
+}
