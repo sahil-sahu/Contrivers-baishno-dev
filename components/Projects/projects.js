@@ -19,7 +19,7 @@ function Projects(){
             date:"BEC April 2k19",
             content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
             image:"/assets/timepass1.png",
-            id:23,
+            id:2,
         },
         {
             date:"BEC April 2k19",
@@ -47,15 +47,20 @@ function Projects(){
 
     return(
         <Swiper
+            className={styles.projectWrapper}
             spaceBetween={50}
             slidesPerView={slidesNum}
             grabCursor={true}
             >
-            {data.map((item) => {return(
+            {data.map((item) => {
+              return(
                 <SwiperSlide key={item.id}>
                     <Project packet={item} />
                 </SwiperSlide>
-            )})}
+            );
+          }
+            )
+            }
             </Swiper>
     );
 

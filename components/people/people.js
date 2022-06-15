@@ -1,9 +1,9 @@
 import styles from "./people.module.css";
 import Person from "./person";
 
-import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'myswiper/react';
 import 'myswiper/css';
+import React, { useRef, useState, useEffect } from "react";
 
 function People(){
 

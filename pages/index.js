@@ -74,10 +74,10 @@ export default function Home() {
                   <div className={styles.slideContainer}>
                     <h1>
                       Classic & Modern
-                      <span>
-                        architecture at it&apos;s best
-                      </span>
                     </h1>
+                    <span>
+                      architecture at it&apos;s best
+                    </span>
                     
                     <Link href={`#`}>
                       <a className={styles.Discover} href="http://">
@@ -97,10 +97,10 @@ export default function Home() {
                    <div className={styles.slideContainer}>
                     <h1>
                       Classic & Modern
-                      <span>
-                        architecture at it&apos;s best
-                      </span>
                     </h1>
+                    <span>
+                      architecture at it&apos;s best
+                    </span>
                     
                     <Link href={`#`}>
                       <a className={styles.Discover} href="http://">
