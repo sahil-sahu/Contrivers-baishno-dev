@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="../assets/img/favicon.png" type="image/x-icon">
+<title>Baishnodevi Builders | Login</title>
+<script src="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<style>
+  .yo{
+    font-family: 'Poppins', sans-serif;
+  }
+  button{border-radius: 30px;}
+  .jumbotron-fluid{width:60%;height: auto}
+</style>  
+<body>
+	<img src="../assets/img/favicon.png" alt="" style="width:10em;height:10em;margin: 10px auto 10px auto;display: block; background-color: #000000;border-radius: 100%;">
+	<div class="container jumbotron jumbotron-fluid">
+	  <div class="container yo">
+	    <h2 class="display-4">Join<span style="font-size: 1.5em;"> Baishnodevi Builders </span></h2>
+	    <p class="lead">Join Baishnodevi Builders If you are a employee of it.</p>
+	    <!-- <p style="font-size: 0.7em;" class="lead">Else you are wasting your time!</p> -->
+	  </div>
+		<div id="firebaseui-auth-container" style="height: auto;"></div>
+	</div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyB47NwT5Oz6xeLhuN_pJRa0wuKAPOurnuM",
+  authDomain: "baishnodev-20b6c.firebaseapp.com",
+  projectId: "baishnodev-20b6c",
+  storageBucket: "baishnodev-20b6c.appspot.com",
+  messagingSenderId: "330087386008",
+  appId: "1:330087386008:web:b604b08ef6d688ef97f9ed",
+  measurementId: "G-KQNKSCNPGB"
+};
+
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+</script>
+<script>
+</script>
+<script type="text/javascript">
+  var uiConfig = {
+    signInSuccessUrl: 'admin_read.html',
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    ],
+  };
+
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  ui.start('#firebaseui-auth-container', uiConfig);
+</script>
+</html>
