@@ -79,6 +79,8 @@
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 1rem;
     font-weight: 600;
+    max-height: 7.8rem;
+    overflow: hidden;
 
 }
 

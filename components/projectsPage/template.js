@@ -60,11 +60,11 @@ export default function Template(props){
 
             <div className={styles.CardWrapper}>
                 <div className={styles.Card}>
-                    <Image src={param.activeData.image} width={width} height={height} alt="BaishnoDevi Builder Projects" />
+                    <Image src={param.activeData.cover} width={width} height={height} alt="BaishnoDevi Builder Projects" />
                     <div className={styles.content}>
                         <h2>{param.activeData.name}</h2>
-                        <p>{param.activeData.description}</p>
-                        <Link href={`/projects/{route}`}><a href={`/projects/${param.activeData.route}`}>DISCOVER WORK</a></Link>
+                        <p>{param.activeData.descrip}</p>
+                        <Link href={`/projects/${param.activeData.route}`}><a href={`/projects/${param.activeData.route}`}>DISCOVER WORK</a></Link>
                     </div>
                 </div>
                 <Link href={`./`}>
@@ -87,16 +87,20 @@ export default function Template(props){
 
                         if(index%2 == 0){
                             return(
-                                <div key={item.route} className={styles.smallCard}>
-                                    <Image src={item.image} width={300} height={150} alt={item.description} />
-                                </div>
+                                <Link href={`projects/${item.route}`}>
+                                    <div key={item.route} className={styles.smallCard}>
+                                        <Image src={item.cover} width={300} height={150} alt={item.descrip} />
+                                    </div>
+                                </Link>
                             );
                         } else{
 
                             return(
-                                <div key={item.route} className={styles.smallCardAlt}>
-                                    <Image src={item.image} width={300} height={150} alt={item.description} />
-                                </div>
+                                <Link href={`projects/${item.route}`}>
+                                    <div key={item.route} className={styles.smallCardAlt}>
+                                        <Image src={item.cover} width={300} height={150} alt={item.descrip} />
+                                    </div>
+                                </Link>
                             );
                         }
                     })}

@@ -53,6 +53,9 @@
     font-size: 1rem;
     font-weight: 600;
     margin: 1.5rem 0;
+    text-overflow: ellipsis;
+    overflow-y: hidden;
+    max-height: 6rem;
     /* line-height: 1.2rem; */
     letter-spacing: -1px;
     /* margin: 2rem 0 3rem 0; */

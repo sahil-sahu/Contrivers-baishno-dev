@@ -3,6 +3,7 @@ import styles from "../../components/projectsPage/template.module.css";
 
 
 import { NextSeo } from 'next-seo';
+import Router, { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -15,6 +16,50 @@ import Header from '../../components/header';
 import Footer from '../../components/footer/footer';
 
 import React, { useRef, useState, useEffect } from "react";
+
+import { app, database } from '../../firebaseConfig';
+import {
+    getDoc,
+    getDocs,
+    collection,
+    doc,
+    where,
+    query,
+} from 'firebase/firestore';
+
+
+function decoder(mainData){
+
+    var obj = JSON.parse(mainData);
+    var arr = [];
+    for (var i in obj) 
+    {   
+        obj[i].route = i;
+        arr.push(obj[i]);
+    };
+
+    return arr;
+};
+
+
+function mapToObj(inputMap) {
+    let obj = {};
+
+    inputMap.forEach((doc) => {
+        obj[doc.id] = doc.data();
+    });
+
+    return obj;
+}
+
+
+async function encoder(category){
+
+    const data = await getDocs(category);
+    let mainData = JSON.stringify(mapToObj(data));
+    return mainData;
+
+}
 
 const dataSet = [
     {
@@ -45,7 +90,9 @@ const dataSet = [
     },
 ]
 
-export default function SingleProject(){
+export default function SingleProject({ mainData, extra }){
+
+    console.log(mainData)
 
     const [height, setHeight ] = useState(600);
     const [width, setWidth ] = useState(1000);
@@ -79,8 +126,8 @@ export default function SingleProject(){
 
         <>
         <NextSeo 
-          title="Successful Projects under Baishnodev Builders"
-          description="Real Estates Company adomed with strong fundamentals on providing real quality homes to people that conform to their taste and style for an affordable price in and a rounding Bhubaneswar since last 11 years. "
+          title={`Our Projects ${mainData.name}`}
+          description={mainData.descrip}
         />
         <main className={styles2.Projects}>
             <Header />
@@ -95,7 +142,7 @@ export default function SingleProject(){
                             modules={[Pagination]}
                             className={styles2.CardSlider}  
                         >
-                            {mainProject.images.map((item,index) => {
+                            {mainData.gallery.map((item,index) => {
                                 return(
                                     <SwiperSlide key={index}>
                                         <Image src={item} width={width} height={height} alt={mainProject.description} />
@@ -113,15 +160,15 @@ export default function SingleProject(){
                     <div className={styles.allprojects}>
                         <div className={styles2.description}>
                             <h2 className={styles2.heading}>
-                                {mainProject.name}
+                                {mainData.name}
                             </h2>
-                            <p className={styles2.content}>{mainProject.description}</p>
+                            <p className={styles2.content}>{mainData.descrip}</p>
                             <Link href={`./`}>
                                 <a className={`${styles.button} ${styles2.button}`} href={`#`}>SEE MORE</a>
                             </Link>
                         </div>
                         <div className={`${styles.smallWrapper} ${styles2.smallWrapper}`}>
-                            {dataSet.map((item, index) => {
+                            {decoder(extra).map((item, index) => {
 
                                 if(index > 2){
                                     return;
@@ -129,16 +176,20 @@ export default function SingleProject(){
 
                                 if(index%2 == 0){
                                     return(
-                                        <div key={item.route} className={styles.smallCard}>
-                                            <Image src={item.image} width={300} height={150} alt={item.description} />
-                                        </div>
+                                        <Link href={item.route}>
+                                            <div key={item.route} className={styles.smallCard}>
+                                                <Image src={item.cover} width={300} height={150} alt={item.descrip} />
+                                            </div>
+                                        </Link>
                                     );
                                 } else{
 
                                     return(
-                                        <div key={item.route} className={styles.smallCardAlt}>
-                                            <Image src={item.image} width={300} height={150} alt={item.description} />
-                                        </div>
+                                        <Link href={item.route}>
+                                            <div key={item.route} className={styles.smallCardAlt}>
+                                                <Image src={item.cover} width={300} height={150} alt={item.descrip} />
+                                            </div>
+                                        </Link>
                                     );
                                 }
                             })}
@@ -154,3 +205,16 @@ export default function SingleProject(){
     );
 
 };
+
+
+export async function getServerSideProps(context) {
+    const { id } = context.query;
+    const docRef = doc(database, 'projects', id);
+    const docSnap = await getDoc(docRef);
+    const mainData = docSnap.data();
+
+    const dbInstance = collection(database, 'projects');
+    const extra = await encoder(query(dbInstance, where("name","!=", mainData.name)));
+
+    return { props: { mainData, extra } }
+  }
