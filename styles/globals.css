@@ -59,7 +59,7 @@ a {
 
 .navbar-collapse{
 
-  background-color: rgba(0,0,0,.75);
+  /* background-color: rgba(0,0,0,.75); */
   padding: 1rem;
 
 }
@@ -81,7 +81,14 @@ a {
   outline: 0;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 992px){
+
+  .navbar-collapse{
+
+    background-color: rgba(0,0,0,.75);
+    padding: 1rem;
+  
+  }
 
   .swiper-button-prev, .swiper-button-next{
 
