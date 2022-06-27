@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Navbar, Container, Nav, NavDropdown  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
+import { PersonFill } from 'react-bootstrap-icons';
+
 export default function Header(){
 
     return(
@@ -24,8 +26,8 @@ export default function Header(){
                         <Nav.Link><Link href={`/`} >Home</Link></Nav.Link>
                         <Nav.Link><Link href={`/projects`} >Projects</Link></Nav.Link>
                         <Nav.Link><Link href={`/about`} >About</Link></Nav.Link>
-                        <Nav.Link><Link href={`/blog`} >Blog</Link></Nav.Link>
                         <Nav.Link><Link href={`/contacts`} >Contact</Link></Nav.Link>
+                        <Nav.Link><Link href={`/blog`} ><PersonFill style={{fontSize: '2rem',}} /></Link></Nav.Link>
                       </Nav>
                     </Navbar.Collapse>
                   </Container>
