@@ -57,7 +57,7 @@
     overflow-y: hidden;
     max-height: 6rem;
     /* line-height: 1.2rem; */
-    letter-spacing: -1px;
+    /* letter-spacing: px; */
     /* margin: 2rem 0 3rem 0; */
     display: block;
     
@@ -97,6 +97,10 @@
     margin: 2rem 1rem;
 
 }
+.button:hover{
+    color: #fff !important;
+    transform: scaleX(1.2);
+  }
 
 .allprojects{
 

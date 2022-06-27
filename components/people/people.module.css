@@ -3,7 +3,7 @@
     width: 100%;
     height: auto;
     /* bac */
-    /* height: 80vh; */
+    min-height: 100vh;
     
 }
 
@@ -57,7 +57,6 @@
     font-weight: 500;
     height: auto;
     margin: 1rem;
-    letter-spacing: -1px;
     color: #00000090;
     /* background-image: url("/assets/testiFrame.svg"); */
    

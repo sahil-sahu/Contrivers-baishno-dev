@@ -27,7 +27,6 @@
     margin: 1.5rem;
     padding: 1rem 1.5rem;
     font-family: 'PT Sans Narrow', sans-serif;
-    letter-spacing: -.3pt;
 
 }
 
@@ -35,5 +34,13 @@
 
     text-align: right;
     color: #F19F39;
+
+}
+
+.text{
+
+    text-overflow: ellipsis;
+    overflow-y: hidden;
+    max-height: 10.3rem;
 
 }

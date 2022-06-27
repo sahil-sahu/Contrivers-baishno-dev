@@ -41,7 +41,7 @@ const Contacts = () => {
               <h2>
                 Contacts Us
               </h2>
-              <iframe className={contacts.gmap} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.1668052519894!2d85.76509244986447!3d20.251915719153352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a76c7f77de83%3A0xa37048a377386e4d!2sContrivers!5e0!3m2!1sen!2sin!4v1655140852663!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe className={contacts.gmap} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.4855274950974!2d85.7820416!3d20.238688900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7cbffffffff%3A0x39e3e1892cd7e32f!2sBaishnodevi%20Engineer%20%26%20Consultancy!5e0!3m2!1sen!2sin!4v1656285363404!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </section>

@@ -6,31 +6,55 @@ import 'myswiper/css';
 
 import React, { useRef, useState, useEffect } from "react";
 
-function Projects(){
+import { app, database } from '../../firebaseConfig';
+import {
+    getDocs,
+    collection,
+    where,
+    orderBy,
+    query,
+    limit
+  } from 'firebase/firestore';
+  
+function decoder(mainData){
+
+  var obj = JSON.parse(mainData);
+  var arr = [];
+  for (var i in obj) 
+  {   
+      obj[i].route = i;
+      arr.push(obj[i]);
+  };
+
+  return arr;
+};
+function Projects(props){
+
+    var projects = props.data;
 
     const data = [
         {
             date:"BEC April 2k19",
-            content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-            image:"/assets/timepass1.png",
+            descrip:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+            cover:"/assets/timepass1.png",
             id:1,
         },
         {
             date:"BEC April 2k19",
-            content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-            image:"/assets/timepass1.png",
+            descrip:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+            cover:"/assets/timepass1.png",
             id:2,
         },
         {
             date:"BEC April 2k19",
-            content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-            image:"/assets/timepass1.png",
+            descrip:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+            cover:"/assets/timepass1.png",
             id:3,
         },
         {
             date:"BEC April 2k19",
-            content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-            image:"/assets/timepass1.png",
+            descrip:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+            cover:"/assets/timepass1.png",
             id:4,
         },
     ];
@@ -52,7 +76,7 @@ function Projects(){
             slidesPerView={slidesNum}
             grabCursor={true}
             >
-            {data.map((item) => {
+            {projects.map((item) => {
               return(
                 <SwiperSlide key={item.id}>
                     <Project packet={item} />
@@ -89,3 +113,26 @@ function useWindowSize() {
   }
 
 export default Projects;
+
+
+
+function mapToObj(inputMap) {
+  let obj = {};
+
+  inputMap.forEach((doc) => {
+      obj[doc.id] = doc.data();
+  });
+
+  return obj;
+}
+
+
+async function encoder(category){
+
+  const data = await getDocs(category);
+  let mainData = JSON.stringify(mapToObj(data));
+  return mainData;
+
+}
+
+

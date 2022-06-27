@@ -18,6 +18,16 @@ import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import { Instagram, Facebook, Linkedin, Twitter } from 'react-bootstrap-icons';
 
+import { app, database } from '../firebaseConfig';
+import {
+    getDocs,
+    collection,
+    where,
+    orderBy,
+    query,
+    limit
+  } from 'firebase/firestore';
+
 const HeroSliderConfigs = {
   containerClass: `${['swiper-container', styles.heroSlide]}`,
   parallax: true,
@@ -37,14 +47,20 @@ const HeroSliderConfigs = {
   effect: 'slide'
 };
 
-export default function Home() {
+export default function Home({ projects }) {
 
   const [parallaxSwiper, setParallaxSwiper] = useState(null);
-  const parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.95 : 0;
+  var parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.95 : 0;
   const parallaxOpacity = 0.5;
 
   const [height, setHeight ] = useState(1000);
   const [width, setWidth ] = useState(1000);
+
+  if (width < 600){
+
+    parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.5 : 0;
+
+  }
 
   useEffect(()=> {
     setHeight(window.innerHeight);
@@ -70,7 +86,7 @@ export default function Home() {
                   data-swiper-parallax={parallaxAmount}
                   data-swiper-parallax-opacity={parallaxOpacity}
                 >
-                  <Image alt="BaishnoDev Construct projects Images" src={'/assets/slider/1.jpg'} width={width} height={height} />
+                  <Image alt="BaishnoDev Construct projects Images" src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F1.webp?alt=media&token=118187e4-dd18-4fed-97d2-21a437bb4eb8'} width={width} height={height} />
                   <div className={styles.slideContainer}>
                     <h1>
                       Classic & Modern
@@ -79,8 +95,8 @@ export default function Home() {
                       architecture at it&apos;s best
                     </span>
                     
-                    <Link href={`#`}>
-                      <a className={styles.Discover} href="http://">
+                    <Link href={`projects`}>
+                      <a className={styles.Discover} href="./projects">
                         DISCOVER WORK
                       </a>
                     </Link>
@@ -93,7 +109,7 @@ export default function Home() {
                   data-swiper-parallax={parallaxAmount}
                   data-swiper-parallax-opacity={parallaxOpacity}
                 >
-                   <Image alt="BaishnoDev Construct projects Images" src={'/assets/slider/2.jpg'} width={width} height={height} />
+                   <Image alt="BaishnoDev Construct projects Images" src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F2.webp?alt=media&token=b49f5981-2d45-495e-b7b0-2f3fa1e9ef88'} width={width} height={height} />
                    <div className={styles.slideContainer}>
                     <h1>
                       Classic & Modern
@@ -102,8 +118,8 @@ export default function Home() {
                       architecture at it&apos;s best
                     </span>
                     
-                    <Link href={`#`}>
-                      <a className={styles.Discover} href="http://">
+                    <Link href={`projects`}>
+                      <a className={styles.Discover} href="./projects">
                         DISCOVER WORK
                       </a>
                     </Link>
@@ -116,7 +132,7 @@ export default function Home() {
                   data-swiper-parallax={parallaxAmount}
                   data-swiper-parallax-opacity={parallaxOpacity}
                 >
-                   <Image alt="BaishnoDev Construct projects Images" src={'/assets/slider/3.jpg'} width={width} height={height} />
+                   <Image alt="BaishnoDev Construct projects Images" src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F3.webp?alt=media&token=762eb36e-87bd-4afa-af75-bbe910d1f197'} width={width} height={height} />
                    <div className={styles.slideContainer}>
                     <h1>
                       Classic & Modern
@@ -125,8 +141,8 @@ export default function Home() {
                       architecture at it&apos;s best
                     </span>
                     <div className={styles.DiscoverContainer}>
-                      <Link href={`#`}>
-                      <a className={styles.Discover} href="http://">
+                      <Link href={`projects`}>
+                      <a className={styles.Discover} href="./projects" >
                         DISCOVER WORK
                       </a>
                     </Link>
@@ -154,7 +170,7 @@ export default function Home() {
         <section className={styles.Projects}>
           <div className={styles.projectsContainer}>
             <h2>Aesthetics</h2>
-            <Projects />
+            <Projects data={decoder(projects)} />
           </div>
         </section>
         <People />
@@ -163,4 +179,52 @@ export default function Home() {
       </main>  
     </>
   )
+}
+
+function decoder(mainData){
+
+  var obj = JSON.parse(mainData);
+  var arr = [];
+  for (var i in obj) 
+  {   
+      obj[i].route = i;
+      arr.push(obj[i]);
+  };
+
+  return arr;
+};
+
+
+function mapToObj(inputMap) {
+  let obj = {};
+
+  inputMap.forEach((doc) => {
+      obj[doc.id] = doc.data();
+  });
+
+  return obj;
+}
+
+
+async function encoder(category){
+
+  const data = await getDocs(category);
+  let mainData = JSON.stringify(mapToObj(data));
+  return mainData;
+
+}
+
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=100, stale-while-revalidate=600'
+  );
+  
+  const dbInstance = collection(database, 'projects');
+
+
+  const projects = await encoder(query(dbInstance, where("category","!=","review"), limit(10)));
+  // const projects = await encoder(query(dbInstance, where("tags","array-contains","completed")));
+
+  return { props: { projects } }
 }

@@ -1,7 +1,7 @@
 .about{
 
     width: 100%;
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 
@@ -58,7 +58,6 @@
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 1.15rem;
     font-weight: 500;
-    letter-spacing: -1px;
     color: #808080;
     
 }

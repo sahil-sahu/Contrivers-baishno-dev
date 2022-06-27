@@ -1,6 +1,6 @@
 .hero{
 
-    height: 75vh;
+    height: 80vh;
     overflow: hidden;
     margin: none;
 
@@ -12,5 +12,46 @@
     object-position: center;
     filter: brightness(.6);
 
+
+}
+
+.Social{
+
+    z-index: 9;
+    position: absolute;
+    top: 75%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+
+}
+
+.Social ul{
+
+    list-style: none;
+    color: #EFA37F;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.Social ul li{
+
+    border-radius: 100%;
+    border: #EFA37F 2px solid;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+}
+
+@media only screen and (max-width: 800px){
+
+    .Social{
+        display: none;
+    }
 
 }
