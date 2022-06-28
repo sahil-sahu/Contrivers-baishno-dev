@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+
 export default function ContactPage(){
 
     const [height, setHeight ] = useState(1000);
@@ -32,21 +33,21 @@ export default function ContactPage(){
             <main>
                 <SmallHero />
                 <Contacts />
-                <Form className={styles.message}>
+                <Form action="api/form" method="post" className={styles.message}>
                     <Form.Group className={styles.inputBox}>
-                        <Form.Control type="text" 
+                        <Form.Control name="name" type="text" 
                                         placeholder="Name" />
                     </Form.Group>
                     <Form.Group className={styles.inputBox}>
-                        <Form.Control type="email" 
+                        <Form.Control name="email" value={`simba@gmail.com`} type="email" 
                                         placeholder="Email" />
                     </Form.Group>
                     <Form.Group className={styles.inputBox}>
-                        <Form.Control type="number" 
+                        <Form.Control name="phone" value={`9078101920`} type="number" 
                                         placeholder="Phone" />
                     </Form.Group>
                     <Form.Group className={styles.inputBox}>
-                        <Form.Control as="textarea" rows={5} placeholder="Enter your age" />
+                        <Form.Control name="message" as="textarea" rows={5} placeholder="Enter your age" />
                     </Form.Group>
                     <Button className={styles.sumbit} variant="primary" type="submit">
                         SEND MESSAGE

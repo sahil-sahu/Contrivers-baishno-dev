@@ -11,6 +11,7 @@ import Projects from '../components/Projects/projects';
 import People from '../components/people/people';
 import Contacts from '../components/footer/contacts';
 import Footer from '../components/footer/footer';
+import Popup from '../components/popup';
 
 
 import React, { useRef, useState, useEffect } from "react";
@@ -50,21 +51,26 @@ const HeroSliderConfigs = {
 export default function Home({ projects }) {
 
   const [parallaxSwiper, setParallaxSwiper] = useState(null);
-  var parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.95 : 0;
+  var parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.3 : 0;
   const parallaxOpacity = 0.5;
+  
+  const [popStarter, setPopup] = useState(false);
 
   const [height, setHeight ] = useState(1000);
   const [width, setWidth ] = useState(1000);
 
-  if (width < 600){
+  // if (width < 600){
 
-    parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.5 : 0;
+  //   parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.5 : 0;
 
-  }
+  // }
 
   useEffect(()=> {
     setHeight(window.innerHeight);
     setWidth(window.innerWidth);
+    setTimeout(()=>{
+      setPopup(true);
+    },5000);
   },
    [])
 
@@ -76,6 +82,7 @@ export default function Home({ projects }) {
         description="Real Estates Company adomed with strong fundamentals on providing real quality homes to people that conform to their taste and style for an affordable price in and a rounding Bhubaneswar since last 11 years. "
       />
       <main>
+        {popStarter ? <Popup closer={setPopup} /> : null}
         <section className="hero">
           <div className={styles.heroConatiner}>
             <Header />
