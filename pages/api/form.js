@@ -31,7 +31,7 @@ export default async function handler(req, res) {
       text: `Just for testing purpose`,
       from: `${body.email} ${process.env.CONTRIVERS_EMAIL}`,
       to: "contrivers512@gmail.com",
-      subject: 'testing emailjs',
+      subject: body.message,
      
     }
 

@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
+    color: #fff;
     /* background-color: aliceblue; */
     padding: 1rem;
     /* overflow: visible; */

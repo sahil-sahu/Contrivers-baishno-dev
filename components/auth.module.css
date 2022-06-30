@@ -1,0 +1,20 @@
+.form{
+
+    min-width: 310px;
+    max-width: 500px;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0px -8px 6px rgba(89, 89, 89, 0.3), 12px 1.2rem 75px rgba(89, 89, 89, 0.2);
+    padding: 3%;
+    border-radius: 2rem;
+
+}
+
+.captcha{
+
+    display: inherit;
+
+}

@@ -27,7 +27,7 @@ export default function Header(){
                         <Nav.Link><Link href={`/projects`} >Projects</Link></Nav.Link>
                         <Nav.Link><Link href={`/about`} >About</Link></Nav.Link>
                         <Nav.Link><Link href={`/contacts`} >Contact</Link></Nav.Link>
-                        <Nav.Link><Link href={`/blog`} ><PersonFill style={{fontSize: '2rem',}} /></Link></Nav.Link>
+                        <Nav.Link><Link href={`/auth`} ><PersonFill style={{fontSize: '2rem',}} /></Link></Nav.Link>
                       </Nav>
                     </Navbar.Collapse>
                   </Container>

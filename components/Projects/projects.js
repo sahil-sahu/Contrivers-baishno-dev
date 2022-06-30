@@ -1,6 +1,8 @@
 import styles from "./projects.module.css";
 import Project from "./project";
 
+import Link from 'next/link';
+
 import { Swiper, SwiperSlide } from 'myswiper/react';
 import 'myswiper/css';
 
@@ -78,8 +80,12 @@ function Projects(props){
             >
             {projects.map((item) => {
               return(
-                <SwiperSlide key={item.id}>
-                    <Project packet={item} />
+                <SwiperSlide key={item.route}>
+                    <Link href={`./projects/${item.route}`}>
+                     <a>
+                      <Project packet={item} />
+                     </a>
+                    </Link>
                 </SwiperSlide>
             );
           }
