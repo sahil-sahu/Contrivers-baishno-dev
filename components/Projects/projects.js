@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'myswiper/react';
 import 'myswiper/css';
+import "myswiper/css/autoplay";
+import { Autoplay } from "myswiper";
 
 import React, { useRef, useState, useEffect } from "react";
 
@@ -77,6 +79,10 @@ function Projects(props){
             spaceBetween={50}
             slidesPerView={slidesNum}
             grabCursor={true}
+            autoplay={{
+              delay: 4000,
+            }}
+            modules={[ Autoplay]}
             >
             {projects.map((item) => {
               return(

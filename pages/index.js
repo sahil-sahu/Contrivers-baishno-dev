@@ -13,6 +13,8 @@ import Contacts from '../components/footer/contacts';
 import Footer from '../components/footer/footer';
 import Popup from '../components/popup';
 
+import Gallery from "react-photo-gallery";
+
 
 import React, { useRef, useState, useEffect } from "react";
 import Swiper from 'react-id-swiper';
@@ -50,6 +52,60 @@ const HeroSliderConfigs = {
   spaceBetween: 0,
   effect: 'slide'
 };
+
+const photos = [
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2FProject-Photo-2-Kairab-Cooperative-Housing-Society-Ltd-Kolkata-5331551_600_800_310_462.jpg?alt=media&token=419e1db4-00ef-484c-bea7-937b9fd4dc25",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2FSai%20Raghunath%20Avenue%20Broucher-1-2_page-0002.webp?alt=media&token=226bd0c3-917f-4a9d-ae90-84f8b672098e",
+    width: 1,
+    height: 1
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2FWhatsApp%20Image%202022-07-01%20at%2010.41.25%20PM.jpeg?alt=media&token=f9212c41-7d3f-429d-8f70-3e32b81b91ea",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2FWhatsApp%20Image%202022-07-01%20at%2010.41.26%20PM.jpeg?alt=media&token=846620b1-aeb2-4c4d-826d-3d2df151f59b",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2Fcf5d1987f603b98.jpg?alt=media&token=1f1f2861-8af2-44df-bc18-28482db4a00b",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2Fgnext_duplex.jpg?alt=media&token=0a80a1af-1b10-4b3a-9140-ae6f9fbbe98a",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2Fsai%20bibhuti%20Final_page-0003.webp?alt=media&token=0ed5f0c7-f2e9-4b4b-a411-aceec8c1af25",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2Fsai%20bibhuti%20Final_page-0014.webp?alt=media&token=d4622942-e93f-40c5-bcad-e8a45ae11182",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2Fsai%20bibhuti%20Final_page-0015.webp?alt=media&token=3da501df-3d4a-4aa0-940b-a2b1b5d4193d",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/phot%20Gallery%2Fsai%20bibhuti%20Final_page-0016.webp?alt=media&token=7b988a75-7bbd-40d6-aafa-8576513f6cde",
+    width: 4,
+    height: 3
+  },
+  
+];
 
 export default function Home({ projects }) {
 
@@ -187,6 +243,12 @@ export default function Home({ projects }) {
           </div>
         </section>
         <People />
+        <section className={styles.Gallery}>
+          <div className={styles.galleryContainer}>
+            <h2>Project Gallery</h2>
+            <Gallery photos={photos} direction={"column"} />
+          </div>
+        </section>
         <Contacts />
         <Footer />
       </main>  

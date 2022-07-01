@@ -4,9 +4,10 @@
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
+    margin: auto;
     color: #fff;
     /* background-color: aliceblue; */
-    padding: 1rem;
+    padding: 1.5rem;
     /* overflow: visible; */
 
 
@@ -26,8 +27,13 @@
     /* background-color: #0B0D31; */
     box-shadow: 5px 10px 1.25rem #ffffffAA, inset -5px -5px .8rem #ffffffAA;
     border-radius: 10px;
-    margin: 1.5rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: -.5rem;
     padding: 1rem 1.5rem;
+    /* padding-bottom: 2rem; */
+    /* height: 12rem; */
+    overflow: hidden;
     font-family: 'PT Sans Narrow', sans-serif;
 
 }
@@ -42,7 +48,7 @@
 .text{
 
     text-overflow: ellipsis;
-    overflow-y: hidden;
-    max-height: 10.3rem;
+    overflow-y: scroll;
+    height: 7.8rem;
 
 }

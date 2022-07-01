@@ -221,5 +221,11 @@
         gap: 2rem;  
     
     }
+    .CardWrapper{
+
+        width: 100%;
+        margin: auto;
+        
+    }
 
 }

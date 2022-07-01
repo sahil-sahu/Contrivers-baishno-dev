@@ -277,7 +277,7 @@
 
 }
 
-.Projects{
+.Projects, .Gallery{
 
     width: 100%;
     height: auto;
@@ -287,7 +287,7 @@
     
 }
 
-.projectsContainer{
+.projectsContainer, .galleryContainer{
 
     margin: auto;
     max-width: 80rem;
@@ -296,7 +296,7 @@
 
 }
 
-.projectsContainer h2{
+.projectsContainer h2, .galleryContainer h2{
 
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
@@ -327,6 +327,29 @@
     /* top: 100%; */
     z-index: 1;
     color: rgba(255,255,255,.2);
+
+}
+
+.galleryContainer::after{
+    content: "04";
+    font-family: 'Playfair Display', serif;
+    font-size: 16rem;
+    transform: translate(80vw,-20%);
+    font-weight: 500;
+    letter-spacing: 0rem;
+    padding-right: 1.5rem;
+    text-align: right;
+    overflow: hidden;
+    line-height: 1rem;
+    z-index: 1;
+    color: rgba(255,255,255,.2);
+}
+.galleryContainer img{
+
+    object-fit: cover;
+    object-position: center;
+    padding: .5%;
+    border-radius: 2rem;
 
 }
 

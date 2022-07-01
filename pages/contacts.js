@@ -39,15 +39,15 @@ export default function ContactPage(){
                                         placeholder="Name" />
                     </Form.Group>
                     <Form.Group className={styles.inputBox}>
-                        <Form.Control name="email" value={`simba@gmail.com`} type="email" 
+                        <Form.Control name="email" type="email" 
                                         placeholder="Email" />
                     </Form.Group>
                     <Form.Group className={styles.inputBox}>
-                        <Form.Control name="phone" value={`9078101920`} type="number" 
+                        <Form.Control name="phone" type="number" 
                                         placeholder="Phone" />
                     </Form.Group>
                     <Form.Group className={styles.inputBox}>
-                        <Form.Control name="message" as="textarea" rows={5} placeholder="Enter your age" />
+                        <Form.Control name="message" as="textarea" rows={5} placeholder="Enter your message" />
                     </Form.Group>
                     <Button className={styles.sumbit} variant="primary" type="submit">
                         SEND MESSAGE

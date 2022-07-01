@@ -37,14 +37,14 @@
     padding-left: 1.5rem;
     overflow: hidden;
     position: absolute;
-    line-height: 15rem;
+    line-height: 18rem;
     height: 80vh;
     display: flex;
     align-items: flex-end;
     /* bottom: 0%; */
     /* top: 100%; */
     z-index: -1;
-    color: rgba(0,0,0,.05);
+    color: rgba(0,0,0,.2);
 
 }
 

@@ -1,6 +1,8 @@
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router'
 
+import Header from '../components/header';
+
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber,PhoneAuthProvider } from "firebase/auth";
 import { app, auth, database } from '../firebaseConfig';
 import {
@@ -126,7 +128,8 @@ export default function Auth(){
       }
 
     return(
-        <>
+        <main className={styles.auth}>
+            <Header />
             <div id={styles.captcha} className={styles.captcha}></div>
             <Form className={styles.form}>
                 <NextSeo 
@@ -159,7 +162,7 @@ export default function Auth(){
                     {otp[0]? `Submit` : `Get OTP`}
                 </Button>
             </Form>
-        </>
+        </main>
 
     );
 

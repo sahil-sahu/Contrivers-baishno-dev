@@ -1,10 +1,31 @@
 import { SMTPClient } from 'emailjs';
 require('dotenv').config()
 
+// import { useRouter } from 'next/router'
+
 export default async function handler(req, res) {
+
     // Get data submitted in request's body.
     const body = req.body
-  
+    // router.push(`mailto:${body.email}?subject=Message by ${body.name}!&body=${body.message}!`);
+    
+    return res.status(200).end(`
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv = "refresh" content = "0; url = mailto:mail@baishnodevibuilder.com?subject=Message by ${body.name}: ${body.phone} &body=${body.message}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    </body>
+    
+    </html>
+
+    `);
     // Optional logging to see the responses
     // in the command line where next.js app is running.
     

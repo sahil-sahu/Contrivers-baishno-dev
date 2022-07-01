@@ -1,7 +1,7 @@
 .contacts{
 
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     /* min-height: 70vh; */
     display: flex;
     align-items: center;
@@ -19,7 +19,7 @@
     padding-left: 1.5rem;
     overflow: hidden;
     position: absolute;
-    line-height: 15rem;
+    line-height: 20rem;
     height: 80vh;
     display: flex;
     align-items: flex-end;
@@ -111,6 +111,8 @@
     .contactsContainer{
 
         flex-direction: column-reverse;
+        justify-content: space-around;
+        gap: 10rem;
         padding: 1rem;
     
     }

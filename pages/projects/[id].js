@@ -10,7 +10,8 @@ import Head from 'next/head';
 import { Swiper, SwiperSlide } from "myswiper/react";
 import "myswiper/css";
 import "myswiper/css/pagination";
-import { Pagination } from "myswiper";
+import "myswiper/css/autoplay";
+import { Pagination, Autoplay } from "myswiper";
 
 import Header from '../../components/header';
 import Footer from '../../components/footer/footer';
@@ -92,7 +93,6 @@ const dataSet = [
 
 export default function SingleProject({ mainData, extra }){
 
-    console.log(mainData)
 
     const [height, setHeight ] = useState(600);
     const [width, setWidth ] = useState(1000);
@@ -139,7 +139,10 @@ export default function SingleProject({ mainData, extra }){
                                 type: "fraction",
                               }}
                               spaceBetween={50}
-                            modules={[Pagination]}
+                              autoplay={{
+                                delay: 4000,
+                              }}
+                            modules={[Pagination, Autoplay]}
                             className={styles2.CardSlider}  
                         >
                             {mainData.gallery.map((item,index) => {
@@ -164,7 +167,7 @@ export default function SingleProject({ mainData, extra }){
                             </h2>
                             <p className={styles2.content}>{mainData.descrip}</p>
                             <Link href={`./`}>
-                                <a className={`${styles.button} ${styles2.button}`} href={`#`}>SEE MORE</a>
+                                <a className={`${styles.button} ${styles2.button}`} href={`./`}>SEE MORE</a>
                             </Link>
                         </div>
                         <div className={`${styles.smallWrapper} ${styles2.smallWrapper}`}>

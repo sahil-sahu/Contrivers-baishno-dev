@@ -113,6 +113,12 @@
     .completed > div{
 
         flex-direction: column;
+        
+    }
+    
+    .completed {
+        
+        padding-top: 12%;
 
     }
 
