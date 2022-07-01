@@ -188,7 +188,7 @@ function read() {
 <div class="card">
     <div class="card-header" id="headingOne">
     <p>
-      <label>
+      <label style="display:none;">
       <input type="checkbox" onclick="showdesign('`+id+`')" class="form-check-input chkbut" id="showdesign`+id+`">
         <span>Show on Design</span>
       </label>
@@ -213,15 +213,15 @@ function read() {
             <input type="text" class="form-control" id="category" value="`+category+`">
           </div>
           <div class="form-group">
-            <label for="Name">Client</label>
+          <label for="Name">Date</label>
+          <input type="text" class="form-control" id="date" value="`+date+`">
+          </div>
+          <div class="form-group">
+            <label for="Name">Progress</label>
             <input type="text" class="form-control" id="client" value="`+client+`">
           </div>
           <div class="form-group">
-            <label for="Name">Date</label>
-            <input type="text" class="form-control" id="date" value="`+date+`">
-          </div>
-          <div class="form-group">
-            <label for="Name">Link</label>
+            <label for="Name">Progress Update</label>
             <input type="text" class="form-control" id="link" value="`+link+`">
           </div>
           <div class="form-group">
