@@ -36,6 +36,9 @@ const HeroSliderConfigs = {
   grabCursor: true,
   speed: 1500,
   loop: true,
+  autoplay: {
+    delay: 5000,
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -68,9 +71,12 @@ export default function Home({ projects }) {
   useEffect(()=> {
     setHeight(window.innerHeight);
     setWidth(window.innerWidth);
-    setTimeout(()=>{
-      setPopup(true);
-    },5000);
+    if(!window.popup){
+      setTimeout(()=>{
+        setPopup(true);
+        window.popup = true;
+      },5000);
+    }
   },
    [])
 

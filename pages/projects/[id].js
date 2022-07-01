@@ -151,7 +151,7 @@ export default function SingleProject({ mainData, extra }){
                             })}
                         </Swiper>
                 <Link href={`./`}>
-                    <a className={styles.button} href={`#`}>SEE ALL</a>
+                    <a className={styles.button} href={`/projects/`}>SEE ALL</a>
                 </Link>
                 <Link href={`./`}>
                     <a className={styles.button} href={`#`}>DOWNLOAD<br />BROUCHER</a>

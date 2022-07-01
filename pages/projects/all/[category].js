@@ -1,16 +1,16 @@
-import styles from "../../components/projects.module.css";
+import styles from "../../../components/projects.module.css";
 
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 
-import Header from '../../components/header';
-import Footer from '../../components/footer/footer';
-import Cross from "../../components/projectsPage/cross";
-import Template from "../../components/projectsPage/template";
+import Header from '../../../components/header';
+import Footer from '../../../components/footer/footer';
+import Cross from "../../../components/projectsPage/cross";
+import Template from "../../../components/projectsPage/template";
 
-import { app, database } from '../../firebaseConfig';
+import { app, database } from '../../../firebaseConfig';
 import {
     getDocs,
     collection,
@@ -72,7 +72,7 @@ function decoder(mainData){
     return arr;
 };
 
-export default function Projects({ completed, ongoing, upcoming }){
+export default function Projects({ projects, category }){
 
     return(
 
@@ -84,16 +84,9 @@ export default function Projects({ completed, ongoing, upcoming }){
         <main className={styles.Projects}>
             <Header />
             <section className={styles.completed}>
-                <Template heading={`completed`} end={3} data={decoder(completed)} />
+                <Template switch={true} heading={category} end={decoder(projects).length} data={decoder(projects)} />
             </section>
             <Cross />
-            <section className={styles.completed}>
-                <Template heading={`ongoing`} end={3} data={decoder(ongoing)} />
-            </section>
-            <Cross />
-            <section className={styles.completed}>
-                <Template heading={`upcoming`} end={3} data={decoder(upcoming)} />
-            </section>
             <Footer />
         </main>
         </>
@@ -122,17 +115,11 @@ async function encoder(category){
 }
 
 
-export async function getServerSideProps({ req, res }) {
-    res.setHeader(
-      'Cache-Control',
-      'public, s-maxage=100, stale-while-revalidate=600'
-    );
-    
+export async function getServerSideProps(context) {
+    const { category } = context.query;
+
     const dbInstance = collection(database, 'projects');
 
-
-    const completed = await encoder(query(dbInstance, where("tags","array-contains","completed")));
-    const ongoing = await encoder(query(dbInstance, where("tags","array-contains","ongoing")));
-    const upcoming = await encoder(query(dbInstance, where("tags","array-contains","upcoming")));
-    return { props: { completed, ongoing, upcoming } }
+    const projects = await encoder(query(dbInstance, where("tags","array-contains","completed")));
+    return { props: { projects, category } }
   }

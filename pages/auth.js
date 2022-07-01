@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router'
 
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber,PhoneAuthProvider } from "firebase/auth";
 import { app, auth, database } from '../firebaseConfig';
@@ -11,6 +12,7 @@ import {
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import React, { useRef, useState, useEffect } from "react";
 
@@ -24,6 +26,8 @@ export default function Auth(){
     const [name, setName] = useState(``);
     const [phone, setPhone] = useState(`+91`);
     const [otp, setOtp] = useState([false,``]);
+    const router = useRouter()
+
 
     function nameValidator(event){
 
@@ -73,10 +77,15 @@ export default function Auth(){
                 const user = result.user;
                 const id = user.reloadUserInfo.localId; 
                 try {
-                    makeUser(id);
+                    await makeUser(id);
+                    window.userInfo = id;  
+                    router.push(`/myprojects`);  
+
                 }catch(err) {
                     //bakwaas
                   }
+
+
                 
                 
             }).catch((error) => {

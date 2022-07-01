@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Navbar, Container, Nav, NavDropdown  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { PersonFill } from 'react-bootstrap-icons';
+import { PersonCircle  } from 'react-bootstrap-icons';
 
 export default function Header(){
 
@@ -19,17 +19,19 @@ export default function Header(){
               </div>
               <Navbar className={styles.Navbar} bg="transparent" expand="lg">
                   <Container>
-                    <Navbar.Brand className={styles.Brand} href="#home">BAISHNODEV</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Link href={'/'}><Navbar.Brand className={styles.Brand} href="#home">BAISHNODEV</Navbar.Brand></Link>
                     <Navbar.Collapse id="basic-navbar-nav" className={styles.navWrapper}>
                       <Nav className={`ms-auto ${styles.navItem}`}>
                         <Nav.Link><Link href={`/`} >Home</Link></Nav.Link>
                         <Nav.Link><Link href={`/projects`} >Projects</Link></Nav.Link>
+                        <Nav.Link><Link href={`/myprojects`} >My Projects</Link></Nav.Link>
                         <Nav.Link><Link href={`/about`} >About</Link></Nav.Link>
                         <Nav.Link><Link href={`/contacts`} >Contact</Link></Nav.Link>
-                        <Nav.Link><Link href={`/auth`} ><PersonFill style={{fontSize: '2rem',}} /></Link></Nav.Link>
+                        {/* <Nav.Link><Link href={`/auth`} ><PersonCircle style={{fontSize: '2rem',}} /></Link></Nav.Link> */}
                       </Nav>
                     </Navbar.Collapse>
+                    <Link href={`/auth`} ><PersonCircle className={styles.loginIco} style={{fontSize: '2rem',}} /></Link>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   </Container>
                 </Navbar>
             </div>

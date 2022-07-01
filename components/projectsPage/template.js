@@ -67,9 +67,9 @@ export default function Template(props){
                         <Link href={`/projects/${param.activeData.route}`}><a href={`/projects/${param.activeData.route}`}>DISCOVER WORK</a></Link>
                     </div>
                 </div>
-                <Link href={`./`}>
-                    <a className={styles.button} href={`#`}>SEE ALL</a>
-                </Link>
+                {!props.switch ? (<Link href={`/projects/all/${props.heading}`}>
+                    <a className={styles.button} href={`/projects/all/${props.heading}`}>SEE ALL</a>
+                </Link>) : ``}
                 <Link href={`./`}>
                     <a className={styles.button} href={`#`}>DOWNLOAD<br />BROUCHER</a>
                 </Link>
@@ -81,13 +81,13 @@ export default function Template(props){
                 <div className={styles.smallWrapper}>
                     {param.dataSet.map((item, index) => {
 
-                        if(index > 3){
+                        if(index > props.end){
                             return;
                         }
 
                         if(index%2 == 0){
                             return(
-                                <Link href={`projects/${item.route}`}>
+                                <Link href={`/projects/${item.route}`}>
                                     <div key={item.route} className={styles.smallCard}>
                                         <Image src={item.cover} width={300} height={150} alt={item.descrip} />
                                     </div>
@@ -96,7 +96,7 @@ export default function Template(props){
                         } else{
 
                             return(
-                                <Link href={`projects/${item.route}`}>
+                                <Link href={`/projects/${item.route}`}>
                                     <div key={item.route} className={styles.smallCardAlt}>
                                         <Image src={item.cover} width={300} height={150} alt={item.descrip} />
                                     </div>

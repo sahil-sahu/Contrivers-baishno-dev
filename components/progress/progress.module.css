@@ -1,0 +1,175 @@
+.Container{
+
+    padding: 2%;
+    padding-top: 14%;
+    color: #fff;
+    z-index: 2;
+    position: relative;
+    max-width: 70rem;
+    margin: auto;
+    min-height: 100vh;
+
+}
+
+.Container h1{
+
+    text-align: right;
+    font-family: 'Playfair Display', serif;
+    color: #F19F39;
+    font-size: 3rem;
+    /* letter-spacing: -2px; */
+    /* font-weight: 600; */
+
+}
+
+.accordian{
+
+    /* max-width: 60rem; */
+    margin: 5% auto;
+
+
+}
+
+/* .accContainer > span{
+
+    position: absolute;
+
+} */
+
+.imgcheck{
+
+    display: flex;
+    align-items: center;
+    gap: 20%;
+
+}
+
+.accContainer{
+
+    /* box-shadow: inset 0px -4px 4px rgba(89, 89, 89, 0.3), 12px 1.2rem 50px rgba(89, 89, 89, 0.1); */
+    /* border-radius: 1rem; */
+    margin: 2%;
+    padding: 1% 2%;
+    border-top: 3px solid #EFA37F;
+    color: #EFA37F !important;
+    /* display: grid; */
+
+}
+
+.card{
+
+    box-shadow: none !important;
+    background-color: transparent !important;
+
+}
+
+.summary > div{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: unset 5% !important;
+    color: #EFA37F !important;
+    border: none;
+    
+}
+
+.summary p{
+    
+    font-family: 'Iceberg', cursive !important;
+    font-size: 1.5rem;
+    width: 25%;
+    text-align: right;
+    min-width: fit-content;
+
+}
+
+.summary img{
+
+    width: 6rem !important;
+    height: 6rem !important;
+    object-fit: cover;
+    border-radius: 1rem;
+
+}
+
+.AccDetails h3{
+
+    color: #fff;
+    font-family:'PT Sans Narrow', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 600;
+
+}
+
+.AccDetails p{
+
+    color: #fff;
+    font-family:'PT Sans Narrow', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.15rem;
+    padding: 1.5rem;
+    
+}
+
+.progressUpdate:before{
+    
+    z-index: 9;
+    font-family:'PT Sans Narrow', sans-serif;
+    content: '"';
+    font-size: 5rem;
+    position: relative;
+
+
+}
+
+.CardSlider{
+
+    width: 75%;
+    min-width: 65vh;
+    flex: 2;
+    height: 60vh;
+
+}
+
+.progressBar{
+
+    min-width: 10rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+
+}
+
+.progressBar p{
+
+    /* display: flex; */
+    padding-top: 7%;
+}
+
+.progressline{
+
+    background-image: linear-gradient(to right, #EFA37F 50%, transparent 50%);
+
+}
+
+@media only screen and (max-width: 600px){
+
+    .CardSlider{
+
+        width: 80%;
+        flex: 2;
+        height: 60vh;
+    
+    }
+
+
+}
+
+.CardSlider img{
+
+    object-position: center;
+    object-fit: cover;
+    filter: brightness(.7);
+    
+}
