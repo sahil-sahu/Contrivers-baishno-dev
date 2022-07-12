@@ -9,14 +9,37 @@ import People from '../components/people/people';
 import Footer from '../components/footer/footer';
 import React, { useRef, useState, useEffect } from "react";
 
+import { app, database } from '../firebaseConfig';
+import {
+    getDocs,
+    collection,
+    where,
+    orderBy,
+    query,
+    limit
+  } from 'firebase/firestore';
+
 export default function AboutPage(){
 
     const [height, setHeight ] = useState(1000);
     const [width, setWidth ] = useState(1000);
+    const [numProjects, setnumProjects ] = useState(10);
 
     useEffect(()=> {
         setHeight(window.innerHeight);
         setWidth(window.innerWidth);
+
+        async function projectsNum(){
+
+            const dbInstance = collection(database, 'projects');
+            const projects = query(dbInstance, where("category","!=","review"));
+            const data = await getDocs(projects);
+            setnumProjects(data.size)
+
+        }
+
+        projectsNum();
+
       },
        [])
 
@@ -38,13 +61,13 @@ export default function AboutPage(){
                             <div className={styles.up}>
                                 <div className={styles.item}>
                                     <span>
-                                        20+
+                                        16
                                     </span>
                                     employees
                                 </div>
                                 <div className={styles.item}>
                                     <span>
-                                        100+
+                                        {numProjects}
                                     </span>
                                     Ideas & Projects
                                 </div>
@@ -55,13 +78,13 @@ export default function AboutPage(){
                             <div className={styles.down}>
                                 <div className={styles.item}>
                                     <span>
-                                        5
+                                        1
                                     </span>
                                     cities with BEC project
                                 </div>
                                 <div className={styles.item}>
                                     <span>
-                                        10
+                                        2
                                     </span>
                                     Real Estate Farms
                                 </div>

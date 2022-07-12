@@ -155,13 +155,13 @@ export default function Home({ projects }) {
                   data-swiper-parallax={parallaxAmount}
                   data-swiper-parallax-opacity={parallaxOpacity}
                 >
-                  <Image alt="BaishnoDev Construct projects Images" src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F1.webp?alt=media&token=118187e4-dd18-4fed-97d2-21a437bb4eb8'} width={width} height={height} />
+                  <Image alt="BaishnoDev Construct projects Images" priority={true} src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F1.webp?alt=media&token=118187e4-dd18-4fed-97d2-21a437bb4eb8'} layout={'fill'}/>
                   <div className={styles.slideContainer}>
                     <h1>
-                      Classic & Modern
+                      Elegant & Unique Design
                     </h1>
                     <span>
-                      architecture at it&apos;s best
+                      as per your choice.
                     </span>
                     
                     <Link href={`projects`}>
@@ -178,13 +178,13 @@ export default function Home({ projects }) {
                   data-swiper-parallax={parallaxAmount}
                   data-swiper-parallax-opacity={parallaxOpacity}
                 >
-                   <Image alt="BaishnoDev Construct projects Images" src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F2.webp?alt=media&token=b49f5981-2d45-495e-b7b0-2f3fa1e9ef88'} width={width} height={height} />
+                   <Image alt="BaishnoDev Construct projects Images" priority={true} src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F2-1.webp?alt=media&token=dd92d8fa-c12b-4021-a835-dc0e5f6f146f'} layout={'fill'} />
                    <div className={styles.slideContainer}>
                     <h1>
-                      Classic & Modern
+                      Innovative Interior
                     </h1>
                     <span>
-                      architecture at it&apos;s best
+                      evaluated as pure.
                     </span>
                     
                     <Link href={`projects`}>
@@ -201,13 +201,37 @@ export default function Home({ projects }) {
                   data-swiper-parallax={parallaxAmount}
                   data-swiper-parallax-opacity={parallaxOpacity}
                 >
-                   <Image alt="BaishnoDev Construct projects Images" src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F3.webp?alt=media&token=762eb36e-87bd-4afa-af75-bbe910d1f197'} width={width} height={height} />
+                   <Image alt="BaishnoDev Construct projects Images" priority={true} src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F3.webp?alt=media&token=762eb36e-87bd-4afa-af75-bbe910d1f197'} layout={'fill'} />
                    <div className={styles.slideContainer}>
                     <h1>
                       Classic & Modern
                     </h1>
                     <span>
-                      architecture at it&apos;s best
+                      architecture at it&apos;s best.
+                    </span>
+                    <div className={styles.DiscoverContainer}>
+                      <Link href={`projects`}>
+                      <a className={styles.Discover} href="./projects" >
+                        DISCOVER WORK
+                      </a>
+                    </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.heroSlide}>
+                <div
+                  className={styles.slideImage}
+                  data-swiper-parallax={parallaxAmount}
+                  data-swiper-parallax-opacity={parallaxOpacity}
+                >
+                   <Image alt="BaishnoDev Construct projects Images" priority={true} src={'https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F4.webp?alt=media&token=7ebcc78b-14cb-47ce-b31a-7a399164ee83'} layout={'fill'} />
+                   <div className={styles.slideContainer}>
+                    <h1>
+                      Homely Designs
+                    </h1>
+                    <span>
+                      make your mood awesome.
                     </span>
                     <div className={styles.DiscoverContainer}>
                       <Link href={`projects`}>
@@ -232,10 +256,10 @@ export default function Home({ projects }) {
         </section>
         <section className={webhault.webhault}>
           <div className={webhault.webHaultContainer}>
-            Make Your <span>Dreams</span> come true
+            The <span>Best Address</span> You Can Get
           </div>
         </section>
-        <About />
+        <About index={true} />
         <section className={styles.Projects}>
           <div className={styles.projectsContainer}>
             <h2>Aesthetics</h2>

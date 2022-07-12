@@ -19,14 +19,14 @@ export default function Header(){
               </div>
               <Navbar className={styles.Navbar} bg="transparent" expand="lg">
                   <Container>
-                    <Link href={'/'}><Navbar.Brand className={styles.Brand} href="#home">BAISHNODEV</Navbar.Brand></Link>
+                    <Link href={'/'}><Navbar.Brand className={styles.Brand} href="#home">BEC Pvt. Ltd.</Navbar.Brand></Link>
                     <Navbar.Collapse id="basic-navbar-nav" className={styles.navWrapper}>
                       <Nav className={`ms-auto ${styles.navItem}`}>
                         <Nav.Link><Link href={`/`} >Home</Link></Nav.Link>
                         <Nav.Link><Link href={`/projects`} >Projects</Link></Nav.Link>
-                        <Nav.Link><Link href={`/myprojects`} >My Projects</Link></Nav.Link>
                         <Nav.Link><Link href={`/about`} >About</Link></Nav.Link>
                         <Nav.Link><Link href={`/contacts`} >Contact</Link></Nav.Link>
+                        <Nav.Link><Link href={`/terms-and-conditions`} >Terms</Link></Nav.Link>
                         {/* <Nav.Link><Link href={`/auth`} ><PersonCircle style={{fontSize: '2rem',}} /></Link></Nav.Link> */}
                       </Nav>
                     </Navbar.Collapse>

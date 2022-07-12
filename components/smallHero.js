@@ -21,7 +21,7 @@ export default function SmallHero(){
         <div className={styles.hero}>
                     <div className={styles.heroConatiner}>
                         <Header />
-                        <Image className={styles.heroImage} src={`https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2F4.webp?alt=media&token=bac02038-52df-4f0f-bf81-1e03c841c90e`} alt="Baisnhodevi Projects Scenery" width={width} height={height*.80}></Image>
+                        <Image className={styles.heroImage} src={`https://firebasestorage.googleapis.com/v0/b/baishnodev-20b6c.appspot.com/o/siteData%2Fpexels-sebastian-s%C3%B8rensen-731082.webp?alt=media&token=4d5ad04c-5e9e-4cb9-9065-97292a01ce66`} alt="Baisnhodevi Projects Scenery" priority={'fill'} width={width} height={height*.80}></Image>
                         <div className={styles.Social}>
                         <ul>
                             <li><Instagram /></li>

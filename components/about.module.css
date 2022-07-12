@@ -77,6 +77,43 @@
 
 }
 
+.terms *{
+
+    transition: .3s;
+    color: #808080 !important;
+
+}
+
+.terms *:hover{
+
+    color:#00055A !important;
+
+}
+
+.know{
+
+    margin: 2rem 0rem;
+
+}
+
+.know *{
+
+    color: #fff;
+    background-color: #00055A;
+    padding: 1rem 2rem;
+    font-family: 'Iceberg', cursive;
+    font-size: 1.3rem;
+    transition: .3s;
+
+}
+
+.know *:hover{
+
+    transform: scaleX(1.2) scaleY(.9);
+    color: #fff;
+
+}
+
 @media only screen and (max-width: 600px){
 
     .aboutContainer{
