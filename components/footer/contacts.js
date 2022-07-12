@@ -1,7 +1,7 @@
 import contacts from "./contacts.module.css";
 import Link from 'next/link';
 
-import { Envelope, TelephoneFill, GeoFill } from 'react-bootstrap-icons';
+import { Envelope, TelephoneFill, GeoFill, Bookmark } from 'react-bootstrap-icons';
 
 const Contacts = () => {
     return(
@@ -33,6 +33,14 @@ const Contacts = () => {
                     Near SBI Aiginia Branch, 
                     Bhubaneswar, Odisha,
                     India 751019
+                    </span>
+                </li>
+                </Link>
+                <Link href={`./terms-and-conditions`}>
+                <li>
+                    <Bookmark className={contacts.icon} />
+                    <span>
+                    : Terms & Conditions
                     </span>
                 </li>
                 </Link>

@@ -251,6 +251,16 @@
 
 }
 
+@media only screen and (max-width: 1000px){
+
+    .navItem *:hover, .loginIco:hover{
+
+        transform: scale(1.01);
+    
+    }
+
+}
+
 @media only screen and (max-width: 800px){
 
     .slideContainer{
@@ -347,9 +357,9 @@
 .galleryContainer img{
 
     object-fit: cover;
-    object-position: center;
-    padding: .5%;
-    border-radius: 2rem;
+    object-position: bottom right;
+    padding: 1%;
+    /* border-radius: 2rem; */
 
 }
 

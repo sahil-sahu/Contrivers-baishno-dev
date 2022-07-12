@@ -92,7 +92,18 @@ export default function AboutPage(){
                         </div>
                     </div>
                 </div>
-                <People />
+                <div className={styles.Cng}>
+                    <div className={styles.CngContainer}>
+                        <div className={styles.commitment}>
+                            <h2>Commitment</h2>
+                            <p>At Baishnodevi Engineers and Consultancy Pvt. Ltd. and Sri Bhulaxmi Infratech LLP, the objective of our construction team is to adopt durable construction methods using high-quality materials and the latest technical know-how. Unique beautiful elevation, maximum space utilization, quality construction, and timely delivery with all clear documents are our commitments. The company invites suggestions from every buyer in designing their respective units according to their needs and satisfaction.</p>
+                        </div>
+                        <div className={styles.guarantee}>
+                            <h2>Guarantee</h2>
+                            <p>Each and every flats unit undergo several checks and tests before being handed over to our customer routine quality inspection is carried out at all stages. Our company scrutinizes property titles minutely, Indemnifies the buyers, and protects them from any loss and damages in respect of the titles. The cost of each flat unit is fixed irrespective of fluctuations in the input cost.</p>
+                        </div>
+                    </div>
+                </div>
                 <Footer />
             </main>
         </>

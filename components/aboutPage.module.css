@@ -114,6 +114,72 @@
 
 }
 
+.Cng{
+
+    width: 100%;
+    height: auto;
+    /* bac */
+    min-height: 80vh;
+
+}
+
+.Cng::before{
+
+    content: "03";
+    font-family: 'Playfair Display', serif;
+    font-size: 16rem;
+    font-weight: 500;
+    letter-spacing: 0rem;
+    /* transform: scaleX(1.3); */
+    padding-left: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    line-height: 18rem;
+    height: 78vh;
+    display: flex;
+    align-items: flex-end;
+    /* bottom: 0%; */
+    /* top: 100%; */
+    z-index: -1;
+    color: rgba(0,0,0,.2);
+
+}
+
+.CngContainer{
+
+    display: flex;
+    max-width: 90rem;
+    margin: auto;
+}
+
+.CngContainer div{
+
+    padding: 5% 8%;
+    flex: 50%;
+
+}
+
+.CngContainer h2{
+
+    font-size: 3.2rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    color: #00055A;
+    padding: 1rem;
+
+}
+
+.CngContainer p{
+
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-align: justify;
+    color: #808080;
+
+}
+
 @media only screen and (max-width: 600px){
 
     .amazing{

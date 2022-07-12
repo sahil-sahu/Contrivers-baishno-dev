@@ -1,0 +1,73 @@
+.terms{
+
+    background-color: #0B0D31;
+    
+}
+
+
+.terms{
+    
+    background-image: url("/assets/Rings.svg");
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 30%;
+    
+}
+
+
+.termsContainer{
+    
+    max-width: 70rem;
+    padding: 2rem;
+    margin: auto;
+    padding-top: 12%;
+
+}
+
+@media only screen and (max-width: 1000px){
+
+    .termsContainer{
+    
+        padding-top: 25%;
+    
+    }
+
+}
+
+
+.termsContainer h1{
+
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: #F19F39;
+
+}
+
+.termsContainer h1::after{
+
+    content: "";
+    text-align: center;
+    margin: 1.5rem;
+    display: block;
+    height: 1rem;
+    width: 25%;
+    margin: auto;
+    border-bottom: 2px solid #F19F39;
+
+
+}
+
+.termsContainer li{
+
+    color: #fff;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    list-style: none;
+    padding: 1.5rem 1rem;
+
+}
