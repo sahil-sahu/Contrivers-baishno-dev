@@ -53,6 +53,22 @@
     
     }
 
+    .terms::after{
+    
+        background-image: url("/assets/Ellipse.svg");
+        background-repeat: no-repeat;
+        background-position: 150% 100%;
+        background-size: 80% 80%;
+        content: "";
+        right: 0%;
+        top: 120%;
+        position: absolute;
+        height: 80vh;
+        width: 50%;
+        z-index: 1 !important;
+    
+    }
+
 }
 
 
