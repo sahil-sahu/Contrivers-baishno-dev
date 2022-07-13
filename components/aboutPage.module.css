@@ -198,6 +198,24 @@
     
     }
 
+    .CngContainer{
+
+        flex-direction: column;
+    }
+
+    .CngContainer h2{
+
+        font-size: 2.5rem;
+        padding: .5rem;
+    
+    }
+    
+    .CngContainer p{
+    
+        font-size: 1rem;
+    
+    }
+
 }
 /* .cool img::before{
 
