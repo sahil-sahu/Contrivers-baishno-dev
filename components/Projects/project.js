@@ -7,7 +7,7 @@ function Project(props){
 
     return(
         <div className={styles.card}>
-            <Image src={cover} width={350} height={230} alt={`BaishnoDev Construction`} />
+            <Image src={cover} width={350} height={230} priority={true} alt={`BaishnoDev Construction`} />
             <div className={styles.content}>
                 <div className={styles.date}>{date}</div>
                 <p className={styles.text}>{descrip}</p>

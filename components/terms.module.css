@@ -4,6 +4,12 @@
     
 }
 
+.terms *{
+
+    z-index: 10;
+
+}
+
 
 .terms{
     
@@ -12,6 +18,21 @@
     background-position: 0% 0%;
     background-size: 30%;
     
+}
+
+.terms::after{
+    
+    background-image: url("/assets/Ellipse.svg");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 12%;
+    content: "";
+    top: 140%;
+    position: absolute;
+    height: 50vh;
+    width: 100%;
+    z-index: 1 !important;
+
 }
 
 
@@ -69,5 +90,6 @@
     letter-spacing: 1px;
     list-style: none;
     padding: 1.5rem 1rem;
+    position: relative;
 
 }

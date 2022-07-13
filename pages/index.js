@@ -119,7 +119,7 @@ export default function Home({ projects }) {
   return (
     <>
       <NextSeo 
-        title="Baishnodev Builders"
+        title="BEC Pvt. Ltd."
         description="Real Estates Company adomed with strong fundamentals on providing real quality homes to people that conform to their taste and style for an affordable price in and a rounding Bhubaneswar since last 11 years. "
       />
       <main>
