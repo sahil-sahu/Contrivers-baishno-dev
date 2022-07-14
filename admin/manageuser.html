@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <style>
   *{
@@ -51,6 +50,40 @@
 .footer a:hover{
 color:grey;
 }
+
+.input-field{
+
+    display: flex;
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    justify-content: space-evenly;
+    gap: 10%;
+
+}
+
+.input-field > *{
+
+    flex: 50%;
+
+}
+
+.details{
+    
+    display: flex;
+    gap: 10%;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 2rem auto;
+
+}
+
+.collapsible-body ul li{
+
+  list-style: none;
+
+}
+
 </style>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
@@ -67,7 +100,7 @@ color:grey;
               <a class="nav-link" href="#"><h4>Add</h4></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#"><h4>Users</h4></a>
+              <a class="nav-link" href="users.html"><h4>Users</h4></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" target="_blank" href="https://compress-or-die.com/webp"><h4>Image Compress</h4></a>
@@ -77,19 +110,70 @@ color:grey;
         <img class="dp" src="https://i1.sndcdn.com/artworks-000421555080-up93x9-t500x500.jpg">
     </nav>
     <br><br><br><br>
-    <center>
-        <table id="userInfo" border="1" cellspacing="0" cellpadding="10">
-            <tr>
-                <th>Name</th>
-                <th>Phone</th>
-            </tr>
-        </table>
-        <br><br>
-        <button type="button" onclick="tableToCSV()">
-            download CSV
-        </button>
-    </center>
 
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6" style="display: block;">
+                      <input id="userPercent" placeholder="e.g 40(don't write '40%')" type="text" class="validate">
+                      <label for="icon_prefix">Completion Percentage</label>
+                    </div>
+                    <br>
+                    <div class="input-field col s6" style="display: block;">
+                      <input id="userComment" type="text" class="validate">
+                      <label for="icon_telephone">Comment</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" data-id="" onclick="saveProject()" id="projectSave"class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="details">
+        <h3 id="userName" contenteditable="true" ></h3>
+        <h3 id="userPhone"></h3>
+        <button id="updateUser">Update</button>
+    </div>
+    <div class="input-field col s12 m6">
+        <select class="icons">
+          <option value="" disabled selected>Choose your option</option>
+          <!-- <option value="" data-icon="images/sample-1.jpg">example 1</option> -->
+        </select>
+        <label>Projects to select</label>
+
+        <button type="button" class="btn btn-primary" onclick="addProject()" data-toggle="modal" data-target="#exampleModal">
+            Add
+          </button>
+
+    </div>
+    
+    <ul class="collapsible">
+      <!-- <li>
+        <div class="collapsible-header"></div>
+        <div class="collapsible-body">
+          <ul id="">
+            <li>Percentage : <span contenteditable="true"></span></li>
+            <li>comment : <span contenteditable="true"></span></li>
+          </ul>
+          <button><span class="material-symbols-outlined">
+            delete
+            </span></button>
+          <button><span class="material-symbols-outlined">
+            update
+            </span></button>
+        </div>
+      </li> -->
+    </ul>
     <br>
     <br>
 <div class="footer">
@@ -126,10 +210,10 @@ const firebaseConfig = {
   var db = firebase.firestore();
   // db.settings({timestampsInSnapshots:true})
 </script>
-<script src="users.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="manageuser.js"></script>
 <script>
 </script>
 <script>

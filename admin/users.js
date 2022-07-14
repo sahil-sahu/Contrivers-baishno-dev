@@ -12,7 +12,7 @@ function tableToCSV() {
 
         // Stores each csv row data
         var csvrow = [];
-        for (var j = 0; j < cols.length; j++) {
+        for (var j = 0; j < 2; j++) {
 
             // Get the text data of each cell
             // of a row and push it to csvrow
@@ -56,6 +56,7 @@ function downloadCSVFile(csv_data) {
     // trigger download
     temp_link.click();
     document.body.removeChild(temp_link);
+    $(".modal").modal('close');
 }
 
 function renderdata(doc){
@@ -66,6 +67,12 @@ function renderdata(doc){
     <tr>
         <td>${name}</td>
         <td>${phone}</td>
+        <td><a href="./manageuser.html?id=${doc.id}"><span class="material-symbols-outlined">
+        open_in_new
+        </span></a></td>
+        <td><a onclick="deletethis('${doc.id}')" href="./manageuser.html?id=${doc.id}"><span class="material-symbols-outlined">
+        delete
+        </span></a></td>
     </tr>
     `;
     $('#userInfo').append(html);
@@ -77,3 +84,13 @@ db.collection("users").get().then((snapshot) => {
         renderdata(doc);
     })
 })
+
+async function deletethis(id){
+
+    event.preventDefault();
+
+    await db.collection("users").doc(id).delete();
+    alert("Succesfully Deleted");
+    location.reload(); 
+
+}
