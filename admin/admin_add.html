@@ -92,22 +92,22 @@ color:grey;
         <label for="date">Date</label>
         <input type="text" class="form-control" id="date">
       </div>
-      <div class="form-group">
+      <div class="form-group" style="display: none;">
         <label for="client">Progress</label>
         <input type="text" placeholder="e.g. : '40' (don't write 40%) " class="form-control" id="client">
       </div>
       <br>
       <div class="form-group">
-        <label for="link">Progress Update</label>
-        <input type="text" placeholder="e.g. : We are done with foundation and painting is to be done rest. " class="form-control" id="link">
+        <label for="link">Brochure link</label>
+        <input type="text" placeholder="e.g. : https://drive.google.com/... " class="form-control" id="link">
       </div>
       <div class="form-group">
         <label for="descrip">Description</label>
         <textarea class="form-control" name="" id="descrip" cols="1" rows="6"></textarea>
       </div>
-      <p>
+      <p style="display: none;">
         <label>
-          <input type="checkbox" id="esteem"/>
+          <input type="checkbox" id="esteem" style="display: none;"/>
           <span>Esteemed Client</span>
         </label>
       </p>
@@ -213,7 +213,7 @@ function completeit(){
           } else{
             document.querySelector("body").innerHTML = ` <div class="jumbotron jumbotron-fluid container" style="margin-top: 20vh;">
                 <div class="container">
-                  <h1 class="display-4">Fuck u bro !!</h1>
+                  <h1 class="display-4">U are not authenticated!!</h1>
                   <p class="lead">We have your login credentials we are reaching u soon.</p>
                 </div>
               </div>`

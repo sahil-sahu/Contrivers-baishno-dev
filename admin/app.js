@@ -216,19 +216,19 @@ function read() {
           <label for="Name">Date</label>
           <input type="text" class="form-control" id="date" value="`+date+`">
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display: none;">
             <label for="Name">Progress</label>
             <input type="text" class="form-control" id="client" value="`+client+`">
           </div>
           <div class="form-group">
-            <label for="Name">Progress Update</label>
+            <label for="Name">Brochure</label>
             <input type="text" class="form-control" id="link" value="`+link+`">
           </div>
           <div class="form-group">
             <label for="descrip">Description</label>
             <textarea class="form-control" name="" id="descrip" cols="1" rows="3">`+descrip+`</textarea>
           </div>
-          <p>
+          <p style="display: none;">
             <label>
               <input type="checkbox" id="esteem"/>
               <span>Esteemed Client</span>
