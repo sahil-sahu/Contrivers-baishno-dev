@@ -70,8 +70,8 @@ export default function Template(props){
                 {!props.switch ? (<Link href={`/projects/all/${props.heading}`}>
                     <a className={styles.button} href={`/projects/all/${props.heading}`}>SEE ALL</a>
                 </Link>) : ``}
-                <Link target={`_blank`} href={`/BEC Compressed.pdf`}>
-                    <a className={styles.button} target={`_blank`}  href={`/BEC Compressed.pdf`}>DOWNLOAD<br />BROUCHER</a>
+                <Link target={`_blank`} href={param.activeData.link}>
+                    <a className={styles.button} target={`_blank`}  href={param.activeData.link}>DOWNLOAD<br />BROUCHER</a>
                 </Link>
             </div>
             <div className={styles.allprojects}>

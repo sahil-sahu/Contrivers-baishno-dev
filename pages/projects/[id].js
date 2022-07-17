@@ -156,8 +156,8 @@ export default function SingleProject({ mainData, extra }){
                 <Link href={`./`}>
                     <a className={styles.button} href={`/projects/`}>SEE ALL</a>
                 </Link>
-                <Link href={`./`}>
-                    <a className={styles.button} href={`#`}>DOWNLOAD<br />BROUCHER</a>
+                <Link target={`_blank`} href={mainData.link}>
+                    <a target={`_blank`} className={styles.button} href={mainData.link}>DOWNLOAD<br />BROUCHER</a>
                 </Link>
                     </div>
                     <div className={styles.allprojects}>

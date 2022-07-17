@@ -120,6 +120,6 @@ export async function getServerSideProps(context) {
 
     const dbInstance = collection(database, 'projects');
 
-    const projects = await encoder(query(dbInstance, where("tags","array-contains","completed")));
+    const projects = await encoder(query(dbInstance, where("tags","array-contains",category)));
     return { props: { projects, category } }
   }
