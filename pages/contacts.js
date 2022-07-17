@@ -32,7 +32,7 @@ export default function ContactPage(){
             />
             <main>
                 <SmallHero />
-                <Contacts />
+                <Contacts main={true} />
                 <Form action="api/form" method="post" className={styles.message}>
                     <Form.Group className={styles.inputBox}>
                         <Form.Control name="name" type="text" 

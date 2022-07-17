@@ -28,3 +28,23 @@
     height: 100vh;
 
 }
+
+@media only screen and (max-width: 800px){
+
+    .form{
+
+        min-width: 280px;
+        max-width: 500px;
+        width: 80%;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: inset 0px -8px 6px rgba(89, 89, 89, 0.8), 12px 1.2rem 75px rgba(89, 89, 89, 0.7);
+        background-color: #fff;
+        padding: 10%;
+        border-radius: 2rem;
+    
+    }
+
+}

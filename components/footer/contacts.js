@@ -3,16 +3,16 @@ import Link from 'next/link';
 
 import { Envelope, TelephoneFill, GeoFill, Bookmark } from 'react-bootstrap-icons';
 
-const Contacts = () => {
+const Contacts = (props) => {
     return(
-        <section className={contacts.contacts}>
+        <section className={`${contacts.contacts} ${props.main ? contacts.offbackground : ""}`}>
           <div className={contacts.contactsContainer}>
             <ul className={contacts.Services} >
                 <Link href={`mailto:mail@baishnodevibuilder.com`}>
                 <li>
                     <Envelope className={contacts.icon} />
                     <span>
-                        : mail@baishnodevibuilder.com
+                        : info@baishnodevibuilder.com
                     </span>
                 </li>
                 </Link>
@@ -20,7 +20,7 @@ const Contacts = () => {
                 <li>
                     <TelephoneFill className={contacts.icon} />
                     <span>
-                        : +919040091803
+                        : +919437018183
                     </span>
                 </li>
                 </Link>

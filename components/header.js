@@ -11,10 +11,10 @@ export default function Header(){
         <div className={styles.Header}>
               <div className={styles.topbar}>
                 <span>
-                  +91-9040091803
+                +91-9437018183
                 </span>
                 <span>
-                  mail@baishnodevbuilder.com
+                  info@baishnodevbuilder.com
                 </span>
               </div>
               <Navbar className={styles.Navbar} bg="transparent" expand="lg">

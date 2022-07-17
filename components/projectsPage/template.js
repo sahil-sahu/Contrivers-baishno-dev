@@ -60,7 +60,7 @@ export default function Template(props){
 
             <div className={styles.CardWrapper}>
                 <div className={styles.Card}>
-                    <Image src={param.activeData.cover} width={width} height={height} alt="BaishnoDevi Builder Projects" />
+                    <Image src={param.activeData.cover} width={width} height={height} priority={true} alt="BaishnoDevi Builder Projects" />
                     <div className={styles.content}>
                         <h2>{param.activeData.name}</h2>
                         <p>{param.activeData.descrip}</p>
@@ -89,7 +89,7 @@ export default function Template(props){
                             return(
                                 <Link href={`/projects/${item.route}`}>
                                     <div key={item.route} className={styles.smallCard}>
-                                        <Image src={item.cover} width={300} height={150} alt={item.descrip} />
+                                        <Image src={item.cover} width={300} height={150} priority={true} alt={item.descrip} />
                                     </div>
                                 </Link>
                             );
@@ -98,7 +98,7 @@ export default function Template(props){
                             return(
                                 <Link href={`/projects/${item.route}`}>
                                     <div key={item.route} className={styles.smallCardAlt}>
-                                        <Image src={item.cover} width={300} height={150} alt={item.descrip} />
+                                        <Image src={item.cover} width={300} height={150} priority={true} alt={item.descrip} />
                                     </div>
                                 </Link>
                             );

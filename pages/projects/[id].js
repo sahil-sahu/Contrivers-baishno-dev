@@ -148,7 +148,7 @@ export default function SingleProject({ mainData, extra }){
                             {mainData.gallery.map((item,index) => {
                                 return(
                                     <SwiperSlide key={index}>
-                                        <Image src={item} width={width} height={height} alt={mainProject.description} />
+                                        <Image src={item} width={width} height={height} priority={true} alt={mainProject.description} />
                                     </SwiperSlide>
                                 );
                             })}
@@ -181,7 +181,7 @@ export default function SingleProject({ mainData, extra }){
                                     return(
                                         <Link href={item.route}>
                                             <div key={item.route} className={styles.smallCard}>
-                                                <Image src={item.cover} width={300} height={150} alt={item.descrip} />
+                                                <Image src={item.cover} width={300} height={150} priority={true} alt={item.descrip} />
                                             </div>
                                         </Link>
                                     );
@@ -190,7 +190,7 @@ export default function SingleProject({ mainData, extra }){
                                     return(
                                         <Link href={item.route}>
                                             <div key={item.route} className={styles.smallCardAlt}>
-                                                <Image src={item.cover} width={300} height={150} alt={item.descrip} />
+                                                <Image src={item.cover} width={300} height={150} priority={true} alt={item.descrip} />
                                             </div>
                                         </Link>
                                     );

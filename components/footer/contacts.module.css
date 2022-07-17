@@ -30,6 +30,12 @@
 
 }
 
+.offbackground::before{
+
+    display: none;
+
+}
+
 .contactsContainer{
 
     max-width: 80rem;
