@@ -2,7 +2,8 @@ import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import AlertDialogSlide from './progressPrompt';
+// import AlertDialogSlide from './progressPrompt';
+import UserProjects from './userProject';
 
 import styles from './progress.module.css';
 
@@ -21,21 +22,23 @@ import { Pagination } from "myswiper";
 
 import React, { useRef, useState, useEffect } from "react";
 
-
 export default function ShowCase(props){
 
     const [height, setHeight ] = useState(1000);
     const [width, setWidth ] = useState(1000);
     const [prompt, setPrompt ] = useState(false);
     
-    let projects = props.projects;
+    const projects = props.userProjects;
+    // console.log(projects);
+
+    // let drive = "https://drive.google.com/drive/folders/1LRSNbfQ_I8NtX2prfLXfKgFB32bq-gnm?usp=sharing";
 
     return(
         <div className={styles.accordian}>
-            {projects.map((item)=>{
+            {projects && projects.map((item)=>{
                 return(
                     <div key={item.route} className={styles.accContainer}>
-                        <AlertDialogSlide open={prompt} settings={setPrompt}/>    
+                        {/* <AlertDialogSlide open={prompt} settings={setPrompt}/>     */}
                         <Accordion className={styles.card}>
                             <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -47,17 +50,17 @@ export default function ShowCase(props){
                                     {/* <Checkbox className={styles.checkbox} onClick={()=>{
                                         setPrompt(true)
                                     }}/> */}
-                                    <img src={item.cover} alt={item.name} />
+                                    <img src={props.projects[item.id].cover} alt={item.name} />
                                 </div>
                                 <div className={styles.progressBar}>
                                     <div className={styles.progressline} style={{
-                                        backgroundImage: `linear-gradient(to right, #EFA37F ${item.client}%, transparent 50%)`,
+                                        backgroundImage: `linear-gradient(to right, #EFA37F ${item.percent}%, transparent 0%)`,
                                         width:`10rem`,
                                         height: `1.5rem`,
                                         border: "1px solid #EFA37F",
                                         borderRadiius: "1rem",
                                     }}></div>
-                                    <p>{item.client}%</p>
+                                    <p>{item.percent}%</p>
                                 </div>
                                 <Typography>{item.name}</Typography>
                             </AccordionSummary>
@@ -67,30 +70,15 @@ export default function ShowCase(props){
                                     Description
                                 </h3>
                                 <Typography>
-                                    {item.descrip}
+                                    {props.projects[item.id].descrip}
                                 </Typography>
                                 <h3>
                                     Progress
                                 </h3>
                                 <p className={styles.progressUpdate}>
-                                    {item.link}
+                                    {item.comment}
                                 </p>
-                                <Swiper
-                                    pagination={{
-                                        type: "fraction",
-                                    }}
-                                    spaceBetween={50}
-                                    modules={[Pagination]}
-                                    className={styles.CardSlider}  
-                                >
-                                    {item.gallery.map((i,index) => {
-                                        return(
-                                            <SwiperSlide key={index}>
-                                                <Image src={i} layout="fill" alt={item.name} />
-                                            </SwiperSlide>
-                                        );
-                                    })}
-                                </Swiper>
+                                <UserProjects drive={item.drive} />
                             </AccordionDetails>
                         </Accordion>
                     </div>

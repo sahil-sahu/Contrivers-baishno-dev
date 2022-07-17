@@ -54,6 +54,25 @@ function decoder(mainData){
     return arr;
 };
 
+function SPdecoder(mainData){
+
+
+    if(mainData.length == 0){
+        
+        return [];
+        
+    } 
+    var obj = JSON.parse(mainData);
+    // var arr = [];
+    // for (var i in obj) 
+    // {   
+    //     obj[i].route = i;
+    //     arr.push(obj[i]);
+    // };
+
+    return obj;
+};
+
 function mapToObj(inputMap) {
     let obj = {};
   
@@ -82,7 +101,8 @@ export default function Progress(){
     const router = useRouter();
     
 
-    const [projects, setProjects] = useState([]);
+    const [projects, setProjects] = useState(false);
+    const [userprojects, setuserProjects] = useState(false);
 
     useEffect(() => {
 
@@ -92,16 +112,26 @@ export default function Progress(){
         async function callProj(){
             
             const dbInstance = collection(database, 'projects');
-            let yoprojects = await encoder(query(dbInstance, where("tags","array-contains-any",['completed','ongoing'])));
-            let projects = decoder(yoprojects);
+            let yoprojects = await encoder(dbInstance);
+            let projects = SPdecoder(yoprojects);
             setProjects(projects);
             
         }
+
+        // https://contrivers-drive-api.herokuapp.com/drive?link=https://drive.google.com/drive/folders/1LRSNbfQ_I8NtX2prfLXfKgFB32bq-gnm?usp=sharing
 
         async function userfetch(){
 
             const docRef = doc(database, 'users', window.userInfo);
             const docSnap = await getDoc(docRef);
+            const myprojects = collection(docRef, 'projects');
+            let projSnap = await encoder(myprojects);
+            let projSnapshot = decoder(projSnap);
+            // console.log(projSnapshot);
+            setuserProjects(projSnapshot);
+            // projSnap.forEach(i => {
+            //     console.log(i.data().percent);
+            // })
             setUser(docSnap.data().name);
 
         }
@@ -132,7 +162,7 @@ export default function Progress(){
                 <h1>
                    Hi! {user}
                 </h1>
-                <ShowCase projects={projects} />
+                {userprojects && projects ? <ShowCase projects={projects} userProjects={userprojects}/> : ""}
 
             </div>
         </main>

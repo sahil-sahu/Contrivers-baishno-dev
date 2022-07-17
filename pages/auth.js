@@ -71,7 +71,6 @@ export default function Auth(){
     async function submitit(event){
 
         event.preventDefault();
-
         if(otp[0]){
             let confirmationResult = window.confirmationResult;
             confirmationResult.confirm(otp[1]).then(async (result) => {
