@@ -84,6 +84,14 @@ color:grey;
 
 }
 
+.row{
+
+  display: grid;
+  
+  gap: 5%;
+
+}
+
 </style>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
@@ -115,17 +123,21 @@ color:grey;
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="row">
-                <form class="col s12">
+            <div class="col">
+                <form class="col s12" name='reset' id="popupform">
                   <div class="row">
-                    <div class="input-field col s6" style="display: block;">
+                    <div class="input-field col s12" style="display: block;">
                       <input id="userPercent" placeholder="e.g 40(don't write '40%')" type="text" class="validate">
                       <label for="icon_prefix">Completion Percentage</label>
                     </div>
                     <br>
-                    <div class="input-field col s6" style="display: block;">
-                      <input id="userComment" type="text" class="validate">
+                    <div class="input-field col s12" style="display: block;">
+                      <input id="userComment" type="text" placeholder="Completed upto ..." class="validate">
                       <label for="icon_telephone">Comment</label>
+                    </div>
+                    <div class="input-field col s12" style="display: block;">
+                      <input id="userLink" type="text" placeholder="https://drive.google.com/...." class="validate">
+                      <label for="icon_telephone">Drive Link</label>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

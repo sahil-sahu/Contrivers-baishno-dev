@@ -47,13 +47,14 @@ class Projects{
 
     }
 
-    async addProject(percent, comment){
+    async addProject(percent, comment, link){
 
         await db.collection("users").doc(this.id).collection("projects").add({
             id: this.addID,
             name: this.addName,
             percent: percent,
             comment : comment,
+            drive : link,
         });
 
     }
@@ -69,6 +70,7 @@ class Projects{
                             <ul id="${load.id}">
                                 <li>Percentage : <span id="user_percent" contenteditable="true">${load.data().percent}</span></li>
                                 <li>comment : <span id="user_comment" contenteditable="true">${load.data().comment}</span></li>
+                                <li>Drive link : <span id="user_link" contenteditable="true">${load.data().drive}</span></li>
                             </ul>
                             <button onclick="deleteUserProject('${load.id}')">
                                 <span class="material-symbols-outlined">delete</span>
@@ -94,6 +96,8 @@ class Projects{
 // $(document).ready(function(){
 //     $('.modal').modal();
 //   });
+
+document.getElementById("popupform").reset();
 
 var projects = new Projects();
 projects.callDocs();
@@ -128,10 +132,11 @@ async function saveProject(){
 
     let percent = document.getElementById("userPercent").value;
     let comment = document.getElementById("userComment").value;
+    let link = document.getElementById("userLink").value;
 
     if(percent){
 
-        await projects.addProject(percent, comment);
+        await projects.addProject(percent, comment, link);
         alert("Added sucessFully");
         location.reload();
 
@@ -153,12 +158,14 @@ async function deleteUserProject(id){
 
 async function updateUserProject(id){
 
-    let percent = $("#user_percent").text();
-    let comment = $("#user_comment").text();
+    let percent = $(`#${id} #user_percent`).text();
+    let comment = $(`#${id} #user_comment`).text();
+    let link = $(`#${id} #user_link`).text();
     await db.collection("users").doc(projects.id).collection("projects").doc(id).update({
 
         percent : percent,
         comment : comment,
+        drive : link,
 
     });
     alert("updated successfully!");
