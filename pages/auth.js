@@ -103,6 +103,8 @@ export default function Auth(){
 
             // return false    
 
+        } else {
+            router.push(`/myprojects`);
         }
 
     }
