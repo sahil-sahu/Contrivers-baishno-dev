@@ -32,8 +32,26 @@ import {
     query,
 } from 'firebase/firestore';
 
+import { getAuth, signInWithCredential, linkWithCredential, OAuthProvider } from "firebase/auth";
+
 import React, { useRef, useState, useEffect } from "react";
 import { WindowX } from 'react-bootstrap-icons';
+
+function getCookie() {
+    let name = "id=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return null
+  } 
 
 function decoder(mainData){
 
@@ -108,7 +126,7 @@ export default function Progress(){
 
         setHeight(window.innerHeight);
         setWidth(window.innerWidth);
-        // setUser(window.userInfo);
+        // setUser(userId);
         async function callProj(){
             
             const dbInstance = collection(database, 'projects');
@@ -122,7 +140,7 @@ export default function Progress(){
 
         async function userfetch(){
 
-            const docRef = doc(database, 'users', window.userInfo);
+            const docRef = doc(database, 'users', userId);
             const docSnap = await getDoc(docRef);
             const myprojects = collection(docRef, 'projects');
             let projSnap = await encoder(myprojects);
@@ -135,8 +153,8 @@ export default function Progress(){
             setUser(docSnap.data().name);
 
         }
-
-        if (window.userInfo){
+        const userId = getCookie();
+        if (userId){
             userfetch();
             callProj();
         } else {

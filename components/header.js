@@ -30,7 +30,7 @@ export default function Header(){
                         {/* <Nav.Link><Link href={`/auth`} ><PersonCircle style={{fontSize: '2rem',}} /></Link></Nav.Link> */}
                       </Nav>
                     </Navbar.Collapse>
-                    <Link href={`/auth`} ><PersonCircle className={styles.loginIco} style={{fontSize: '2rem',}} /></Link>
+                    <Link href={`/myprojects`} ><PersonCircle className={styles.loginIco} style={{fontSize: '2rem',}} /></Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   </Container>
                 </Navbar>

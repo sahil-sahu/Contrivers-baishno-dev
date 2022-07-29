@@ -93,23 +93,24 @@
 .know{
 
     margin: 2rem 0rem;
+    transition: ease-in-out .2s;
+    transform-origin: left;
 
 }
 
 .know *{
 
-    color: #fff;
+    color: #fff !important;
     background-color: #00055A;
     padding: 1rem 2rem;
     font-family: 'Iceberg', cursive;
     font-size: 1.3rem;
-    transition: .3s;
 
 }
 
-.know *:hover{
+.know:hover{
 
-    transform: scaleX(1.2) scaleY(.9);
+    transform: scaleX(1.1) scaleY(.95);
     color: #fff;
 
 }

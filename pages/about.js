@@ -46,8 +46,8 @@ export default function AboutPage(){
     return(
         <>
             <NextSeo 
-                title="Know About Baishnodev Builders"
-                description="Real Estates Company adomed with strong fundamentals on providing real quality homes to people that conform to their taste and style for an affordable price in and a rounding Bhubaneswar since last 11 years. "
+                title="BEC Pvt. Ltd. | About us"
+                description="Baishnodevi Engineers and Consultancy Pvt. Ltd. is a real estate company with a sister concern of Sri Bhulaxmi Infratech LLP adorned with solid fundamentals on providing high-quality homes and flats to people that confirm their taste and style for an affordable price in and around Bhubaneswar. We are among Odisha's leading groups, serving customers across real estate and infrastructure. The company’s evolution from its humble origins in 2008 to becoming the trusted and leading group of companies in Odisha tells an inspiring story. We are here to redefine the Nation with unparalleled trust, faith, and confidence from our customers and employees. Honoured to have pioneered the cause of modern gated communities for over years in Bhubaneswar. We believe in – reiterating it with a touch of warmth and love in everything we create—staying true to our belief that spaces created with love become places that are home to happiness. We provide you with one-stop solution for FOUNDATION , SUPERSTRUCTURE , WALL , PLASTERING , Internal , External , FLOORING , KITCHEN , DOOR , WINDOWS , PAINTING , ELECTRICAL, WATER SUPPLY. Baishnodevi Engineers and Consultancy Pvt. Ltd. are the best builders in Bhubaneswar and provide new luxury apartments, 2BHK, 3BHK, and 4BHK Flats for sale in Bhubaneswar with all sorts of amenities."
             />
             <main>
                 <SmallHero />
@@ -73,7 +73,7 @@ export default function AboutPage(){
                                 </div>
                             </div>
                             <div className={styles.cool}>
-                                <img src={`/assets/cool.jpg`} />
+                                <img alt="Innovation in hands of BEC Pvt. Ltd." priority={true} src={`/assets/cool.jpg`} />
                             </div>
                             <div className={styles.down}>
                                 <div className={styles.item}>

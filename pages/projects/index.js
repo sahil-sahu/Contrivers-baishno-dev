@@ -78,8 +78,8 @@ export default function Projects({ completed, ongoing, upcoming }){
 
         <>
         <NextSeo 
-          title="Successful Projects under Baishnodev Builders"
-          description="Real Estates Company adomed with strong fundamentals on providing real quality homes to people that conform to their taste and style for an affordable price in and a rounding Bhubaneswar since last 11 years. "
+          title="BEC Pvt. Ltd. | Projects"
+          description="Some of our completed, ongoing and upcoming projects."
         />
         <main className={styles.Projects}>
             <Header />

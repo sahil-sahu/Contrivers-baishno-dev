@@ -126,7 +126,7 @@ export default function SingleProject({ mainData, extra }){
 
         <>
         <NextSeo 
-          title={`Our Projects ${mainData.name}`}
+          title={`Our Project | ${mainData.name}`}
           description={mainData.descrip}
         />
         <main className={styles2.Projects}>

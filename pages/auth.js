@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 import Header from '../components/header';
 
-import { getAuth, RecaptchaVerifier, signInWithPhoneNumber,PhoneAuthProvider } from "firebase/auth";
+import { getAuth, RecaptchaVerifier, signInWithPhoneNumber, PhoneAuthProvider } from "firebase/auth";
 import { app, auth, database } from '../firebaseConfig';
 import {
     getDoc,
@@ -11,6 +11,7 @@ import {
     setDoc,
 } from 'firebase/firestore';
 
+import { signInWithCredential, linkWithCredential, OAuthProvider } from "firebase/auth";
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -23,11 +24,35 @@ import OtpInput from 'react-otp-input';
 import styles from '../components/auth.module.css';
 import { async } from '@firebase/util';
 
+function setCookie(cvalue) {
+    const d = new Date();
+    d.setTime(d.getTime() + (15*24*60*60*1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = "id=" + cvalue + ";" + expires + ";path=/";
+  }
+
+function getCookie() {
+    let name = "id=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return null
+  }  
+
 export default function Auth(){
 
-    const [name, setName] = useState(``);
+    const [name, setName] = useState(false);
     const [phone, setPhone] = useState(`+91`);
     const [otp, setOtp] = useState([false,``]);
+    const [docRef, setdocRef] = useState(null);
     const router = useRouter()
 
 
@@ -53,16 +78,30 @@ export default function Auth(){
 
     }
 
+    const createUser = async docRef => {
+        await setDoc(docRef, {
+            name: name,
+            phone: phone,
+        });
+        router.push(`/myprojects`)
+    };
+
     const makeUser = async id => {
 
-        const docRef = doc(database, 'users', id);
-        const docSnap = await getDoc(docRef);
+        const docref = doc(database, 'users', id);
+        const docSnap = await getDoc(docref);
         if (!docSnap.exists()){
 
-            await setDoc(docRef, {
-                name: name,
-                phone: phone,
-                });
+            setName("");
+            setOtp(['new','']);
+            setdocRef(docref);
+
+            // await setDoc(docRef, {
+            //     name: name,
+            //     phone: phone,
+            //     });
+
+            // return false    
 
         }
 
@@ -71,16 +110,18 @@ export default function Auth(){
     async function submitit(event){
 
         event.preventDefault();
-        if(otp[0]){
+        // makeUser(id)
+        if(otp[0]===true){
             let confirmationResult = window.confirmationResult;
             confirmationResult.confirm(otp[1]).then(async (result) => {
               // User signed in successfully.
                 const user = result.user;
                 const id = user.reloadUserInfo.localId; 
                 try {
+                    setCookie(id);  
                     await makeUser(id);
-                    window.userInfo = id;  
-                    router.push(`/myprojects`);  
+                    // window.userInfo = id;
+                     
 
                 }catch(err) {
                     //bakwaas
@@ -95,7 +136,11 @@ export default function Auth(){
             });
         }
 
-        if(name && phone.length == 13){
+        if (name!=false){
+            createUser();
+        }
+
+        if(phone.length == 13){
             await phoneAuth();
             setOtp([true,``]);
         }
@@ -126,6 +171,13 @@ export default function Auth(){
             });
       }
 
+    useEffect(()=>{
+        const userId = getCookie();
+        if(userId){
+            router.push(`/myprojects`); 
+        }
+    },[])  
+
     return(
         <main className={styles.auth}>
             <Header />
@@ -135,19 +187,18 @@ export default function Auth(){
                     title="Baishnodev Builders : Login"
                     description="Real Estates Company adomed with strong fundamentals on providing real quality homes to people that conform to their taste and style for an affordable price in and a rounding Bhubaneswar since last 11 years. "
                 />
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                {name!==false? <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control onChange={nameValidator} value={name} type="name" placeholder="Enter your Full Name" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                </Form.Group> : <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Phone Number</Form.Label>
                     <Form.Control onChange={phoneValidator} value={phone} maxLength={13} type="phone" placeholder="Enter phone number" />
                     <Form.Text className="text-muted">
                         We&apos;ll never share your phone with anyone else.
                     </Form.Text>
                 </Form.Group>
-                {otp[0] ? <Form.Group className="mb-3" controlId="formBasicEmail">
+                }
+                {otp[0]===true ? <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>OTP</Form.Label>
                             <OtpInput
                                 value={otp[1]}
@@ -158,7 +209,7 @@ export default function Auth(){
                         </Form.Group> : ``}
                 
                 <Button onClick={submitit} variant="primary" type="submit">
-                    {otp[0]? `Submit` : `Get OTP`}
+                    {otp[0]? `Submit` : otp[0]=='new'? 'Submit' : `Get OTP`}
                 </Button>
             </Form>
         </main>
