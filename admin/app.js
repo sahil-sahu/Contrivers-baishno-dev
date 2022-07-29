@@ -181,7 +181,7 @@ function read() {
     var showit = doc.data().showit
     var imgs = ''
     for (x in gallery) {
-       imgs += '<img src="'+gallery[x]+'" class="gal_img" id="'+ gallery_name[1+parseInt(x)] +'" alt="">'
+       imgs += '<div style="display: inline; gap: .5rem; margin: 1rem;"><label><input type="checkbox" /><span></span></label><img src="'+gallery[x]+'" class="gal_img" id="'+ gallery_name[1+parseInt(x)] +'" alt=""></div>'
     }
     var show = 
 `
@@ -242,7 +242,14 @@ function read() {
           </div>
           <div class="form-group" >
             <h3>Gallery</h3>
-            <input type="file" class="form-control-file" id="m_img" multiple><label for=""><button onclick="uploadit('gallery','`+id+`')" class="btn my-btn btn-primary">ok</button></label><h5 id="gal_c"><span></span></h5>
+            <input type="file" class="form-control-file" id="m_img" multiple>
+            <label for="">
+            <button onclick="uploadit('gallery','`+id+`')" class="btn my-btn btn-primary">ok</button>
+            </label>
+            <label for="">
+            <button onclick="picdelete('`+id+`')" class="btn my-btn btn-primary" style="display:flex;justify-content:center;align-items:center;"><i class="my-icon fa fa-trash"></i></button>
+            </label>
+            <h5 id="gal_c"><span></span></h5>
             <div class="gallery" style="overflow: auto; max-height: 300px;width: 100%;">`+imgs+`</div>
           </div>
           <button onclick="updateit('`+id+`')" class="btn btn-primary">Save & Update</button>
@@ -335,7 +342,8 @@ async function upupload(file,nm,boo,id) {
                 $("div[id='"+id+"'] .changeit").attr("id",nm);
               }
               else{
-                var img = '<img src="'+downloadURL+'" id="'+nm+'" class="gal_img" alt="">'
+                // var img = '<img src="'+downloadURL+'" id="'+nm+'" class="gal_img" alt="">'
+                var img = '<div style="display: inline; gap: .5rem; margin: 1rem;"><label><input type="checkbox" /><span></span></label><img src='+downloadURL+'" class="gal_img" id="'+nm+'" alt=""></div>'
                 $("div[id='"+id+"'] .gallery").append(img);
               }
             });
@@ -357,17 +365,7 @@ function uploadit(chk,id) {
             console.log("Unable to delete from storage try manually!")
           });
  } else {
-    $("div[id='"+id+"'] .gallery img").toArray().forEach(item => {
-       let photo_nm = $(item).attr('id');
-       let temp_img = storageRef.child('images/'+photo_nm);
-          // Delete the file
-          temp_img.delete().then(function() {
-            // File deleted successfully
-          }).catch(function(error) {
-            console.log("Unable to delete from storage try manually!")
-          });
-      });
-    $("div[id='"+id+"'] .gallery").empty();
+    
     for (var i = 0; i < $("div[id='"+id+"'] #m_img").get(0).files.length; ++i) {
         var exfile = $("div[id='"+id+"'] #m_img").get(0).files[i];
         nm = exfile.name
@@ -599,3 +597,24 @@ function backtoalltags() {
     setTimeout(uploadtags, 5);
   })
 }
+
+async function picdelete(id){
+  $("div[id='"+id+"'] .gallery > div").toArray().forEach(item => {
+    let photo_nm = $(item).find("img").attr('id');
+    let photobool = $(item).find("input:checked").val();
+    if(photobool){
+      let temp_img = storageRef.child('images/'+photo_nm);
+      // Delete the file
+      temp_img.delete().then(function() {
+        // File deleted successfully
+      }).catch(function(error) {
+        console.log("Unable to delete from storage try manually!")
+      });
+
+      $(item).remove();
+    }
+   
+  });
+}
+
+
