@@ -65,6 +65,17 @@ $('#m_img').change(function() {
 $("body > form").submit(gotobase);
 function gotobase() {
   event.preventDefault();
+  $("#sumbitoloader").replaceWith(`<div class="preloader-wrapper big active">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>`);
   var form_name = $("#Name").val()
   var form_category = $("#category").val()
   var form_client = $("#client").val()
@@ -111,6 +122,7 @@ function gotobase() {
         }
       }).catch(function(error) {
           console.log("Error getting document:", error);
+          location.reload();
         });
       });  
     });
@@ -252,7 +264,7 @@ function read() {
             <h5 id="gal_c"><span></span></h5>
             <div class="gallery" style="overflow: auto; max-height: 300px;width: 100%;">`+imgs+`</div>
           </div>
-          <button onclick="updateit('`+id+`')" class="btn btn-primary">Save & Update</button>
+          <button id="sumbitoloader" onclick="updateit('`+id+`')" class="btn btn-primary">Save & Update</button>
         </div>
       </div>
     </div>
@@ -273,6 +285,17 @@ function read() {
 
 function updateit(id){
   event.preventDefault()
+  $("#sumbitoloader").replaceWith(`<div class="preloader-wrapper big active">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>`);
   var form_name = $("#"+id+" #Name").val()
   var form_category = $("#"+id+" #category").val()
   var form_client = $("#"+id+" #client").val()
