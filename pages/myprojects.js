@@ -145,7 +145,10 @@ export default function Progress(){
             const myprojects = collection(docRef, 'projects');
             let projSnap = await encoder(myprojects);
             let projSnapshot = decoder(projSnap);
-            // console.log(projSnapshot);
+            if(projSnapshot.length == 0){
+                alert("You are allowed to visit this page !");
+                router.push(`/`);
+            }
             setuserProjects(projSnapshot);
             // projSnap.forEach(i => {
             //     console.log(i.data().percent);

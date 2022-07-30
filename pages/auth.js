@@ -78,7 +78,8 @@ export default function Auth(){
 
     }
 
-    const createUser = async docRef => {
+    async function createUser(){
+        console.log("Chacha")
         await setDoc(docRef, {
             name: name,
             phone: phone,
