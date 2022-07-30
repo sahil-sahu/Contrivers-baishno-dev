@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv = "refresh" content = "0; url = mailto:mail@baishnodevibuilder.com?subject=Message by ${body.name}: ${body.phone} &body=${body.message}"/>
+        <meta http-equiv = "refresh" content = "0; url = mailto:info@baishnodevbuilder.com?subject=Message by ${body.name}: ${body.phone} &body=${body.message}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>

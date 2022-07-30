@@ -140,9 +140,7 @@ export default function Auth(){
 
         if (name!=false){
             createUser();
-        }
-
-        if(phone.length == 13){
+        }else if(phone.length == 13){
             await phoneAuth();
             setOtp([true,``]);
         }
