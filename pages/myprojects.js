@@ -9,6 +9,7 @@ import ShowCase from '../components/progress/showcase';
 
 import styles from '../components/progress/progress.module.css';
 import styles2 from '../components/projects.module.css';
+import buttonst from '../components/projectsPage/template.module.css';
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -52,6 +53,19 @@ function getCookie() {
     }
     return null
   } 
+
+function deleteCookies() {
+    var allCookies = document.cookie.split(';');
+    
+    // The "expire" attribute of every cookie is 
+    // Set to "Thu, 01 Jan 1970 00:00:00 GMT"
+    for (var i = 0; i < allCookies.length; i++)
+        document.cookie = allCookies[i] + "=;expires="
+        + new Date(0).toUTCString();
+
+    location.reload();    
+
+}  
 
 function decoder(mainData){
 
@@ -183,6 +197,7 @@ export default function Progress(){
                 <h1>
                    Hi! {user}
                 </h1>
+                <a className={`${buttonst.button} ${styles2.button}`} onClick={deleteCookies}>Logout</a>
                 {userprojects && projects ? <ShowCase projects={projects} userProjects={userprojects}/> : ""}
 
             </div>

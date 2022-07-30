@@ -202,6 +202,10 @@
 
 }
 
+.Container > a{
+    float : right;
+}
+
 .CardSlider img{
 
     object-position: center;
