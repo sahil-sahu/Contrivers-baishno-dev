@@ -148,7 +148,7 @@ export default function SingleProject({ mainData, extra }){
                             {mainData.gallery.map((item,index) => {
                                 return(
                                     <SwiperSlide key={index}>
-                                        <Image src={item} width={width} height={height} priority={true} alt={mainProject.description} />
+                                        <Image src={item} width={width} height={height} priority={true} alt={mainData.descrip} />
                                     </SwiperSlide>
                                 );
                             })}
