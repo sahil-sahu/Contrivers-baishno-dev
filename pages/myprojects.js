@@ -197,7 +197,7 @@ export default function Progress(){
                 <h1>
                    Hi! {user}
                 </h1>
-                <a className={`${buttonst.button} ${styles2.button}`} onClick={deleteCookies}>Logout</a>
+               <div className={styles.logout}> <a className={`${buttonst.button} ${styles2.button}`} onClick={deleteCookies}>Logout</a></div>
                 {userprojects && projects ? <ShowCase projects={projects} userProjects={userprojects}/> : ""}
 
             </div>
