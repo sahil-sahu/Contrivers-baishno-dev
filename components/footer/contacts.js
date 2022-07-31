@@ -8,7 +8,7 @@ const Contacts = (props) => {
         <section className={`${contacts.contacts} ${props.main ? contacts.offbackground : ""}`}>
           <div className={contacts.contactsContainer}>
             <ul className={contacts.Services} >
-                <Link href={`mailto:mail@baishnodevibuilder.com`}>
+                <Link href={`mailto:info@baishnodevibuilder.com`}>
                 <li>
                     <Envelope className={contacts.icon} />
                     <span>

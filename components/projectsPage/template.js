@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import React, { useRef, useState, useEffect } from "react";
+import Cross from './cross';
 
 import { Swiper, SwiperSlide } from "myswiper/react";
 import "myswiper/css";
@@ -15,6 +16,9 @@ export default function Template(props){
     let data = originalData.slice();
     // const [activeData, setActive] = useState(data[0]);
     data.shift(0);
+    if (data.length==0){
+        data = props.data;
+    }
     // const [dataSet, setvData] = useState(data);
     const [param, setparam] = useState({
         index:0,
@@ -23,15 +27,25 @@ export default function Template(props){
     });
     const [height, setHeight ] = useState(600);
     const [width, setWidth ] = useState(1000);
-
+    
+    
     function flipper(i){
 
         let datum = originalData.slice();
-        setparam({
-            index: i,
-            activeData: datum.splice(param.index,1)[0],
-            dataSet: datum,
-        });
+        
+        if (datum.length > 1){
+            setparam({
+                index: i,
+                activeData: datum.splice(param.index,1)[0],
+                dataSet: datum,
+            });
+        } else {
+            setparam({
+                index: i,
+                activeData: datum[0],
+                dataSet: datum,
+            });
+        }
 
     }
 
@@ -44,18 +58,26 @@ export default function Template(props){
     },5000);
 
     useEffect(()=> {
-        setHeight(window.innerHeight*.5);
-        setWidth(window.innerWidth*.4);
 
-        if(window.innerWidth < 801){
+        if(originalData.length==0){
+            console.log(originalData.length)
+            return (<></>);
+        } else {
             setHeight(window.innerHeight*.5);
-            setWidth(window.innerWidth*.9);
+            setWidth(window.innerWidth*.4);
+    
+            if(window.innerWidth < 801){
+                setHeight(window.innerHeight*.5);
+                setWidth(window.innerWidth*.9);
+            }
+
         }
         
       },
        [])
 
     return(
+        <>
         <div className={styles.projectContainer}>
 
             <div className={styles.CardWrapper}>
@@ -109,6 +131,8 @@ export default function Template(props){
             </div>
 
         </div>
+        
+        </>
     );
     
 };

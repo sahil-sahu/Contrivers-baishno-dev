@@ -94,6 +94,7 @@ export default function Projects({ completed, ongoing, upcoming }){
             <section className={styles.completed}>
                 <Template heading={`upcoming`} end={3} data={decoder(upcoming)} />
             </section>
+            <Cross />
             <Footer />
         </main>
         </>

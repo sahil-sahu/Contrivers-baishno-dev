@@ -118,6 +118,8 @@ export default function SingleProject({ mainData, extra }){
             setHeight(window.innerHeight*.9);
             setWidth(window.innerWidth*.9);
         }
+
+        
         
       },
        []);
@@ -218,6 +220,7 @@ export async function getServerSideProps(context) {
 
     const dbInstance = collection(database, 'projects');
     const extra = await encoder(query(dbInstance, where("name","!=", mainData.name)));
+    mainData.gallery.push(mainData.cover);
 
     return { props: { mainData, extra } }
   }

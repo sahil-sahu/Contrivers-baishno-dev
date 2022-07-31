@@ -2,10 +2,29 @@ import styles from "./index.module.css";
 import Link from 'next/link';
 import { Navbar, Container, Nav, NavDropdown  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import { useRouter } from 'next/router'
 
 import { PersonCircle  } from 'react-bootstrap-icons';
 
+function getCookie() {
+  let name = "id=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+      }
+  }
+  return null
+} 
+
 export default function Header(){
+
+    const router = useRouter();
 
     return(
         <div className={styles.Header}>
@@ -19,7 +38,7 @@ export default function Header(){
               </div>
               <Navbar className={styles.Navbar} bg="transparent" expand="lg">
                   <Container>
-                    <Link href={'/'}><Navbar.Brand className={styles.Brand} href="#home">Baishnodevi Builders</Navbar.Brand></Link>
+                    <Link href={'/'}><Navbar.Brand className={styles.Brand} href="#home">Baishnodevi Builder</Navbar.Brand></Link>
                     <Navbar.Collapse id="basic-navbar-nav" className={styles.navWrapper}>
                       <Nav className={`ms-auto ${styles.navItem}`}>
                         <Nav.Link><Link href={`/`} >Home</Link></Nav.Link>
@@ -30,7 +49,12 @@ export default function Header(){
                         {/* <Nav.Link><Link href={`/auth`} ><PersonCircle style={{fontSize: '2rem',}} /></Link></Nav.Link> */}
                       </Nav>
                     </Navbar.Collapse>
-                    <Link href={`/myprojects`} ><PersonCircle className={styles.loginIco} style={{fontSize: '2rem',}} /></Link>
+                    <PersonCircle className={styles.loginIco} style={{fontSize: '2rem',}} onClick={()=>{
+                      if(!getCookie()){
+                        alert("For our existing customers only.")
+                      }
+                      router.push(`/myprojects`);
+                    }} />
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   </Container>
                 </Navbar>
