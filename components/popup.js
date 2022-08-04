@@ -7,6 +7,17 @@ export default function Popup(props){
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
     <style type="text/css">
         #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:600px;}
+        #mc-embedded-subscribe{
+
+            background-color: red;
+          
+          }
+          
+          #mc-embedded-subscribe::hover{
+          
+            background-color: red !important;
+          
+          }
         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
@@ -35,8 +46,8 @@ export default function Popup(props){
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c2e4693338b96ca5772627ae1_3c1cf0ef38" tabindex="-1" value=""></div>
             <div class="optionalParent">
                 <div class="clear foot">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                    <p class="brandingLogo"><a href="http://eepurl.com/h7MriD" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                    <input type="submit" style="background-color:rgba(220,0,0,1);" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    <p class="">We will get back to you soon</p>
                 </div>
             </div>
         </div>

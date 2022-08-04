@@ -61,7 +61,7 @@ export default function AboutPage(){
                             <div className={styles.up}>
                                 <div className={styles.item}>
                                     <span>
-                                        16
+                                        50+
                                     </span>
                                     employees
                                 </div>
@@ -78,15 +78,13 @@ export default function AboutPage(){
                             <div className={styles.down}>
                                 <div className={styles.item}>
                                     <span>
-                                        1
+                                        5+
                                     </span>
                                     cities with BEC project
                                 </div>
                                 <div className={styles.item}>
-                                    <span>
-                                        2
-                                    </span>
-                                    Real Estate Farms
+                                    Baishnodevi Engineers <br />
+                                    & Group of Companies
                                 </div>
                             </div>
                         </div>

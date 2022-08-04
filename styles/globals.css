@@ -89,6 +89,18 @@ a {
   outline: 0;
 }
 
+#mc-embedded-subscribe{
+
+  background-color: red;
+
+}
+
+#mc-embedded-subscribe::hover{
+
+  background-color: red !important;
+
+}
+
 @media only screen and (max-width: 992px){
 
   .navbar-collapse{

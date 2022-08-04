@@ -84,15 +84,15 @@ export default function Projects({ completed, ongoing, upcoming }){
         <main className={styles.Projects}>
             <Header />
             <section className={styles.completed}>
-                <Template heading={`completed`} end={3} data={decoder(completed)} />
+                <Template heading={`Completed`} end={3} data={decoder(completed)} />
             </section>
             <Cross />
             <section className={styles.completed}>
-                <Template heading={`ongoing`} end={3} data={decoder(ongoing)} />
+                <Template heading={`Ongoing`} end={3} data={decoder(ongoing)} />
             </section>
             <Cross />
             <section className={styles.completed}>
-                <Template heading={`upcoming`} end={3} data={decoder(upcoming)} />
+                <Template heading={`Upcoming`} end={3} data={decoder(upcoming)} />
             </section>
             <Cross />
             <Footer />

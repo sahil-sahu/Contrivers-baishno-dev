@@ -11,7 +11,7 @@ function Footer(){
                     <span>
                         BAISHNODEVI
                     </span>
-                    ENGINEERS AND CONSULTANCY
+                     ENGINEERS AND CONSULTANCY PVT. LTD.
                 </h3>
                 <div className={styles.socialWrap}>
                     <div className={styles.Social}>

@@ -6,9 +6,9 @@ const About = (props) => {
         <section className={about.about}>
           <div className={about.aboutContainer}>
             <ul className={about.Services} >
-              <li>01. Construction</li>
-              <li>02. Engineering</li>
-              <li>03. Builders</li>
+              <li>01. Multistoried Apartments</li>
+              <li>02. Duplex, Simplex & Villas</li>
+              <li>03. Construction and Engineering services</li>
               <li className={about.terms}><Link href={'./terms-and-conditions'}>Terms and Conditions</Link></li>
             </ul>
             <div className={about.aboutText}>
