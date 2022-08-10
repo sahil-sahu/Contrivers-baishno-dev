@@ -74,6 +74,7 @@ function decoder(mainData){
 
 export default function Projects({ projects, category }){
 
+
     return(
 
         <>
@@ -120,6 +121,6 @@ export async function getServerSideProps(context) {
 
     const dbInstance = collection(database, 'projects');
 
-    const projects = await encoder(query(dbInstance, where("tags","array-contains",category)));
+    const projects = await encoder(query(dbInstance, where("tags","array-contains",category.toLowerCase())));
     return { props: { projects, category } }
   }
