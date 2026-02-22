@@ -72,6 +72,7 @@ function decoder(mainData){
     return arr;
 };
 
+
 export default function Projects({ completed, ongoing, upcoming }){
 
     return(
@@ -83,18 +84,30 @@ export default function Projects({ completed, ongoing, upcoming }){
         />
         <main className={styles.Projects}>
             <Header />
-            <section className={styles.completed}>
-                <Template heading={`Completed`} end={3} data={decoder(completed)} />
-            </section>
-            <Cross />
-            <section className={styles.completed}>
-                <Template heading={`Ongoing`} end={3} data={decoder(ongoing)} />
-            </section>
-            <Cross />
-            <section className={styles.completed}>
-                <Template heading={`Upcoming`} end={3} data={decoder(upcoming)} />
-            </section>
-            <Cross />
+            {!!decoder(completed).length && (
+                <>
+                <section className={styles.completed}>
+                    <Template heading={`Completed`} end={3} data={decoder(completed)} />
+                </section>
+                <Cross />
+                </>
+            )}
+            {!!decoder(ongoing).length && (
+                <>
+                <section className={styles.completed}>
+                    <Template heading={`Ongoing`} end={3} data={decoder(ongoing)} />
+                </section>
+                <Cross />
+                </>
+            )}
+            {!!decoder(upcoming).length && (
+                <>
+                <section className={styles.completed}>
+                    <Template heading={`Upcoming`} end={3} data={decoder(upcoming)} />
+                </section>
+                <Cross />
+                </>
+            )}
             <Footer />
         </main>
         </>

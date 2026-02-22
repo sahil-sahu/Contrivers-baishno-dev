@@ -101,4 +101,19 @@
         align-items: center;
     }
 
+    .logoGrid img{
+        width: 75px;
+        height: 75px;
+    }
+
+}
+
+.logoGrid{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem auto;
+}
+
+.logoGrid img{
+    border-radius: 1000px;
 }

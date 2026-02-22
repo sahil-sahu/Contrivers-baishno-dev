@@ -1,7 +1,6 @@
 import styles from "./footer.module.css";
 import { Instagram, Facebook, Linkedin, Twitter } from 'react-bootstrap-icons';
 import Image from 'next/image';
-
 function Footer(){
 
     return(
@@ -34,8 +33,12 @@ function Footer(){
                         </a>
                     </div>
                 </div>
+                <div className={styles.logoGrid}>
+                    <Image src={`/assets/baishnodevi.png`} alt="Baishno Devi" width={150} height={150} />
+                    <Image src={`/assets/sri_bhulaxmi.png`} alt="Sri Bhulaxmi" width={150} height={150} />
+                </div>
                 <div className={styles.credits}>
-                    <span>BEC</span> ©{new Date().getFullYear()}. All rights reserved. Designed with ❤️ by <a href="https://contrivers.tk">Contrivers</a>
+                    <span>BEC</span> {new Date().getFullYear()}. All rights reserved. Designed with by <a href="https://contrivers.tk">Contrivers</a>
                 </div>
             </div>
         </footer>

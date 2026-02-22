@@ -8,19 +8,27 @@ const Contacts = (props) => {
         <section className={`${contacts.contacts} ${props.main ? contacts.offbackground : ""}`}>
           <div className={contacts.contactsContainer}>
             <ul className={contacts.Services} >
-                <Link href={`mailto:info@baishnodevibuilder.com`}>
+                <Link href={`mailto:baishnodevi.bbsr@gmail.com`}>
                 <li>
                     <Envelope className={contacts.icon} />
                     <span>
-                        : info@baishnodevibuilder.com
+                        : baishnodevi.bbsr@gmail.com
                     </span>
                 </li>
                 </Link>
-                <Link href={`tel:+919040091803`}>
+                <Link href={`tel:+919040091802`}>
                 <li>
                     <TelephoneFill className={contacts.icon} />
                     <span>
-                        : +919437018183
+                        : +919040091802(Miss Sarita)
+                    </span>
+                </li>
+                </Link>
+                <Link href={`tel:+919040091808`}>
+                <li>
+                    <TelephoneFill className={contacts.icon} />
+                    <span>
+                        : +919040091808(Miss Ankita)
                     </span>
                 </li>
                 </Link>
@@ -28,8 +36,8 @@ const Contacts = (props) => {
                 <li>
                     <GeoFill className={contacts.icon} />
                     <span>
-                    : Plot No. 278/3181,
-                    AIIMS Nagar,
+                    : Plot No. 361/3215,
+                    AIIMS Nagar, Lane-6
                     Near SBI Aiginia Branch, 
                     Bhubaneswar, Odisha,
                     India 751019
